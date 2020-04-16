@@ -5,7 +5,7 @@ The following labs in this project are designed for Microchip’s Curiosity High
 ##### Curiosity High Pin Count (HPC) Development Board Website:
 https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM164136
 
-#### Curiosity High Pin Count (HPC) Development Board:
+##### Curiosity High Pin Count (HPC) Development Board:
 ![Curiosity High Pin Count (HPC) Development Board](images/HPC-board.PNG)
 
 
@@ -30,8 +30,7 @@ The labs in this project are presented in the same order as they appear on the p
 ## INPUTS AND DISPLAY
 • Push Button Switch – Only one on-board push button switch S1 is utilized. S1 is connected to the PIC MCU’s RB4 pin and is used to switch to the next lab. <br />
 • Potentiometer – A 10kΩ potentiometer connected to the RA0 pin is used in labs requiring analog inputs. <br />
-• LEDs - The Curiosity HPC Development Board has four LEDs (D2 through D5) that are connected to I/O ports RA4 through RA7, respectively. These LEDs are used to display the output of the different labs.
-
+• LEDs - The Curiosity HPC Development Board has four LEDs (D2 through D5) that are connected to I/O ports RA4 through RA7, respectively. These LEDs are used to display the output of the different labs. <br/>
 
 ### Lab 1: Hello World
 #### Introduction
@@ -68,20 +67,20 @@ In C, we use Binary Left Shift and Right Shift Operators (<< and >>, respectivel
 For example, for a certain register rotateReg, we want to push a ‘1’ into the LSB of the register and have the rest of the bits shift to the left, we can use the Binary Left Shift Operator (<<). We would first have to set up the Carry bit with the value that we want to push into the register before we execute shift instruction, as seen in the figure below.
 
 ###### Left Shift Binary Operation
-![Lab3-left-shift-binary-operation](images/Lab3-left-shift-binary-operation.png)
+![Lab3-left-shift-binary-operation](images/Lab3-left-shift-binary-operation.PNG)
 
 Similarly, if we want to push a ‘1’ into the MSB of the register and have the rest of the bits shift to the right, we can use the Binary Right Shift Operator (>>). We would first have to set up the Carry bit with the value that we want to push into the register before we execute shift instruction, as seen in  the figure below.
 
 ###### Right Shift Binary Operation
-![Lab3-right-shift-binary-operation](images/Lab3-right-shift-binary-operation.png)
+![Lab3-right-shift-binary-operation](images/Lab3-right-shift-binary-operation.PNG)
 
 
 ### Lab 4: ANALOG-TO-DIGITAL CONVERSION (ADC)
 #### Introduction
-This lesson shows how to configure the ADC, run a conversion, read the analog voltage controlled by the on-board potentiometer and display the high order four bits on the display.
+This lab shows how to configure the ADC, run a conversion, read the analog voltage controlled by the on-board potentiometer, print the conversion result on UART and display the high order four bits on the display.
 
 #### Hardware Effects
-The top four MSBs of the ADC are reflected onto the LEDs. Rotate the potentiometer to change the display. The ADC value will be printed on UART TX pin which is connected to pin RC5 through PPS. Connect this pin to the Virtual COM port's TX pin using a jumper wire to use the onboard serial to USB feature.
+The four most significant bits of the ADC result are reflected onto each of the four LEDs respectively. Rotate the potentiometer to change the display. The ADC value will be printed on UART TX pin which is connected to pin RC5 through PPS. Connect this pin to the Virtual COM port's TX pin using a jumper wire to use the onboard serial to USB feature.
 
 #### Summary
 The PIC devices have an on-board Analog-to-Digital Converter (ADC) with 12 bits of resolution. Several devices feature the Analog-to-Digital Converter with Computation which can also be configured to operate in basic mode similar to the legacy ADC operation. (Note: The type of ADC, channels and resolution vary amongst the devices. Refer to the datasheet for more detail.) The converter can be referenced to the device’s VDD or an external voltage reference. This lab references it to VDD. The result from the ADC is represented by a ratio of the voltage to the reference.
@@ -91,11 +90,11 @@ The PIC devices have an on-board Analog-to-Digital Converter (ADC) with 12 bits 
 #### Introduction
 This lesson combines all of the previous lessons to produce a variable speed rotating LED display that is proportional to the ADC value. The ADC value and LED rotate speed are inversely proportional to each other.
 #### Hardware Effects
-Rotate the clockwise to see the LEDs shift faster.
+Rotate the clockwise to see the LEDs shift faster. The ADC value will be printed on UART TX pin which is connected to pin RC5 through PPS. Connect this pin to the Virtual COM port's TX pin using a jumper wire to use the onboard serial to USB feature.
 #### Summary
 A crucial step in this lesson is to check if the ADC value is 0. If it does not perform the zero check, and the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
 
-![Lab 5 Program Flow](images/Lab5-program-flow.png)
+![Lab 5 Program Flow](images/Lab5-program-flow.PNG)
 
 ### Lab 6: PULSE-WIDTH MODULATION (PWM)
 #### Introduction
@@ -153,24 +152,4 @@ The top 4 MSBs of the ADC is written to EEPROM. These are read afterwards and di
 #### Summary
 This lab has a similar appearance to LESSON 4: ADC. But instead of directly moving the ADC result directly onto the LEDs, it performs a simple “write” and “read” on the EEPROM. As shown on FIGURE 10-1 below, the top 4 MSBs of the ADC result is first written to EEPROM, and retrieved later from the same address before moving onto the LEDs.
 
-![Lab 5 Program Flow](images/Lab10-program-flow.png)
-
-
-
-
-### Subheaders like this
-
-|Tables        | Look like this     |
-|------------- | :----------------: |
-|An element    | A thing            |
-|Another       | Another            |
-
-![An Image](images/image_name.jpg)
-
-```c
-void example_code(void)
-{
-    int two = 1 + 1;
-}
-
-```
+![Lab 5 Program Flow](images/Lab10-program-flow.PNG)
