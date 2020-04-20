@@ -1,17 +1,20 @@
 # INTRODUCTION
 
-The following labs in this project are designed for Microchip’s Curiosity High Pin Count (HPC) Development board. This development board supports Microchip's 28 and 40-pin 8-bit PIC® MCUs. This MPLAB X project contains several lab exercises that demonstrate a large number of basic capabilities of PIC® devices and can also be used to test the condition of the board.
-
-##### Curiosity High Pin Count (HPC) Development Board Website:
-https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM164136
+The following labs in this demo code project are designed for Microchip’s Curiosity High Pin Count (HPC) Development board. This development board supports Microchip's 28 and 40-pin 8-bit PIC® MCUs. This MPLAB X project contains several lab exercises that demonstrate a large number of basic capabilities of PIC® devices and can also be used to test the condition of the board. Each lab contains a brief description of the lab and discussions to make you become easily acquainted with the different peripherals and registers of PIC® MCUs. These labs also make use of the MPLAB Code Configurator (MCC), an easy-to-use plugin tool for MPLAB X IDE that you can use to generate codes for a more efficient use of the CPU and memory resources. All labs are written in C language and are compatible with the latest XC8 compilers.
 
 ##### Curiosity High Pin Count (HPC) Development Board:
 ![Curiosity High Pin Count (HPC) Development Board](images/HPC-board.PNG)
 
+## Software Used
+     - MPLAB® X IDE 5.35 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
+     - MPLAB® XC8 2.10 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
+     - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+     - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+     - Microchip PIC18F-Q Series Device Support (1.4.109) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/)
 
-This document comprises of lessons utilizing the different peripherals and features of 8-bit PIC® MCUs while demonstrating the different capabilities of the Curiosity Development Board. Each lab contains a brief description of the lab and discussions to make you become easily acquainted with the different peripherals and registers of PIC® MCUs. These labs also make use of the MPLAB Code Configurator (MCC), an easy-to-use plugin tool for MPLAB X IDE that you can use to generate codes for a more efficient use of the CPU and memory resources. All labs are written in C language and are compatible with the latest XC8 compilers.
-
-NOTE : The MPLAB X version v5.35, XC8 compiler v2.10 and MCC v3.95 are used in the development of the labs.
+## Hardware Used
+     - [(PIC18F47Q10 Microcontroller)](https://www.microchip.com/wwwproducts/en/PIC18F47Q10)
+     - [(Curiosity High Pin Count (HPC) Development Board)](https://www.microchip.com/developmenttools/ProductDetails/PartNO/DM164136)     
 
 ## LABS
 The labs in this project are presented in the same order as they appear on the programmed labs. You can progress through each of the labs by simply pressing the S1 button on the board.
@@ -88,41 +91,36 @@ The PIC devices have an on-board Analog-to-Digital Converter (ADC) with 12 bits 
 
 ### Lab 5: VARIABLE SPEED ROTATE
 #### Introduction
-This lesson combines all of the previous lessons to produce a variable speed rotating LED display that is proportional to the ADC value. The ADC value and LED rotate speed are inversely proportional to each other.
+This lab combines all of the previous lab to produce a variable speed rotating LED display that is proportional to the ADC value. The ADC value and LED rotate speed are inversely proportional to each other.
 #### Hardware Effects
 Rotate the clockwise to see the LEDs shift faster. The ADC value will be printed on UART TX pin which is connected to pin RC5 through PPS. Connect this pin to the Virtual COM port's TX pin using a jumper wire to use the onboard serial to USB feature.
 #### Summary
-A crucial step in this lesson is to check if the ADC value is 0. If it does not perform the zero check, and the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
+A crucial step in this lab is to check if the ADC value is 0. If it does not perform the zero check, and the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
 
 ![Lab 5 Program Flow](images/Lab5-program-flow.PNG)
 
 ### Lab 6: PULSE-WIDTH MODULATION (PWM)
 #### Introduction
-In this lesson, the PIC MCU generates a PWM signal that lights an LED with the potentiometer thereby controlling the brightness.
+In this lab, the PIC MCU generates a PWM signal that lights an LED with the potentiometer thereby controlling the brightness.
 #### Hardware Effects
-Rotating potentiometer will adjust the brightness of LED D5.
+Rotating potentiometer will adjust the brightness of LED D5. The ADC value will be printed on UART TX pin which is connected to pin RC5 through PPS. Connect this pin to the Virtual COM port's TX pin using a jumper wire to use the onboard serial to USB feature.
 #### Summary
 Pulse-Width Modulation (PWM) is a scheme that provides power to a load by switching quickly between fully ON and fully OFF states. The PWM signal resembles a square wave where the high portion of the signal is considered the ON state and the low portion of the signal is considered the OFF state. The high portion, also known as the pulse width, can vary in time and is defined in steps. A longer, high ON time will illuminate the LED brighter. The frequency or period of the PWM does not change. The PWM period is defined as the duration of one cycle or the total amount of ON and OFF time combined. Another important term to take note is the PWM duty cycle which is the ratio of the pulse width to the period and is often expressed in percentage. A lower duty cycle corresponds to less power applied and a higher duty cycle corresponds to more power applied.
-It is recommended that the reader refer to the Capture/Compare/PWM section in the data sheet to learn about each register. Several devices contain PWM modules in addition to the CCP modules. These modules are essentially the same as the CCP without the Capture or Compare functionality. This lesson will briefly cover how to setup a single PWM using the PWM module.
-The PWM period is specified by the PRx register. Timer 2/4/6 is used to count up to the value in PWMxDC register. When the timer is equal to PRx, the following three events occur on the next increment cycle:
-1. TMRx is cleared
-2. The PWMx pin is set
-3. The PWM pulse width is latched from PWMxDC
 
 
 ### Lab 7: TIMERS
 #### Introduction
-This lesson will produce the same output as LESSON 3: ROTATE. The only difference is that this version uses Timer1 to provide the delay routine.
+This lab will produce the same output as Lab 3: ROTATE. The only difference is that this version uses Timer1 to provide the delay routine.
 #### Hardware Effects
-LEDs rotate from right to left, similar to Lesson 3.
+LEDs rotate from right to left, similar to Lab 3.
 #### Summary
 Timer1 is a counter module that uses two 8-bit paired registers (TMR1H:TMR1L) to implement a 16-bit timer/counter in the processor. It may be used to count instruction cycles or external events that occur at or below the instruction cycle rate. <br />
-This lesson configures Timer1 to count instruction cycles and to set a flag when it rolls over. This frees up the processor to do meaningful work rather than wasting instruction cycles in a timing loop. Using a counter provides a convenient method of measuring time or delay loops as it allows the processor to work on other tasks rather than counting instruction cycles.
+This lab configures Timer1 to count instruction cycles and to set a flag when it rolls over. This frees up the processor to do meaningful work rather than wasting instruction cycles in a timing loop. Using a counter provides a convenient method of measuring time or delay loops as it allows the processor to work on other tasks rather than counting instruction cycles.
 
 
 ### Lab 8: INTERRUPTS
 #### Introduction
-This lesson discusses all about interrupts – its purpose, capabilities and how to set them up. Most interrupts are sourced from MCU peripheral modules. Some I/O pins can also be configured to generate interrupts whenever a change in state is detected. Interrupts usually signal events that require servicing by the software’s Interrupt Service Routine (ISR). Once an interrupt occurs, the program counter immediately jumps to the ISR and once the Interrupt Flag is cleared, resumes what it was doing before. It is a rather more efficient way of watching out for events than continuously polling a bit or register.
+This lab discusses all about interrupts – its purpose, capabilities and how to set them up. Most interrupts are sourced from MCU peripheral modules. Some I/O pins can also be configured to generate interrupts whenever a change in state is detected. Interrupts usually signal events that require servicing by the software’s Interrupt Service Routine (ISR). Once an interrupt occurs, the program counter immediately jumps to the ISR and once the Interrupt Flag is cleared, resumes what it was doing before. It is a rather more efficient way of watching out for events than continuously polling a bit or register.
 #### Hardware Effects
 LEDs D5, D4, D3 and D2 rotate from left to right at a constant rate of 499.712 ms.
 #### Summary
@@ -131,7 +129,7 @@ This lab demonstrates the advantage of using interrupts over polling. An interru
 
 ### Lab 9: WAKE-UP FROM SLEEP USING WATCHDOG TIMER
 #### Introduction
-This lesson will introduce the Sleep mode. SLEEP() function is used to put the device into a low power standby mode.
+This lab will introduce the Sleep mode. SLEEP() function is used to put the device into a low power standby mode.
 #### Hardware Effects
 Once this lab is on RUNNING state, the watchdog timer will start counting. While in Sleep mode, LEDs D2/D4 and LEDs D3/D5 are turned ON and OFF respectively. Pressing the switch won't go to the next lab since the PIC is in Sleep mode. After the watchdog timer has reached its period, which is approximately 4 seconds for this lab, the PIC exits sleep mode and the four LEDs, D2 through D5, are toggled.
 #### Summary
@@ -146,10 +144,10 @@ The Watchdog Timer (WDT) is a system timer that generates a Reset if the firmwar
 
 ### Lab 10: EEPROM
 #### Introduction
-This lesson provides code for writing and reading a single byte onto the on-board EEPROM. EEPROM is nonvolatile memory, meaning that it does not lose its value when power is shut off. This is unlike RAM, which will lose its value when no power is applied. The EEPROM is useful for storing variables that must still be present during no power. It is also convenient to use if the entire RAM space is used up. Writes and reads to the EEPROM are relatively quick, and are much faster than program memory operations.
+This lab provides code for writing and reading a single byte onto the on-board EEPROM. EEPROM is nonvolatile memory, meaning that it does not lose its value when power is shut off. This is unlike RAM, which will lose its value when no power is applied. The EEPROM is useful for storing variables that must still be present during no power. It is also convenient to use if the entire RAM space is used up. Writes and reads to the EEPROM are relatively quick, and are much faster than program memory operations.
 #### Hardware Effects
 The top 4 MSBs of the ADC is written to EEPROM. These are read afterwards and displayed on the LEDs. Rotating the potentiometer changes value of the ADC to be written to and read from EEPROM.
 #### Summary
-This lab has a similar appearance to LESSON 4: ADC. But instead of directly moving the ADC result directly onto the LEDs, it performs a simple “write” and “read” on the EEPROM. As shown on FIGURE 10-1 below, the top 4 MSBs of the ADC result is first written to EEPROM, and retrieved later from the same address before moving onto the LEDs.
+This lab has a similar appearance to Lab 4: ADC. But instead of directly moving the ADC result directly onto the LEDs, it performs a simple “write” and “read” on the EEPROM. As shown on FIGURE 10-1 below, the top 4 MSBs of the ADC result is first written to EEPROM, and retrieved later from the same address before moving onto the LEDs.
 
 ![Lab 5 Program Flow](images/Lab10-program-flow.PNG)
