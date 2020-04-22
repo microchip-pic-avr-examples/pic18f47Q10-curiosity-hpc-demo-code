@@ -1,24 +1,17 @@
 /**
-  Interrupt Lab Source File
+  Sleep Wakeup Lab Source File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    Interrupt.c
+    SleepWakeUp.c
 
   Summary:
-    This is the source file for the Interrupt lab
+    This is the source file for the Sleep Wakeup lab
 
   Description:
-    This source file contains the code on how the Interrupt lab works.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
-        Device            :  PIC18F47Q10
-        Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10
-        MPLAB             :  MPLAB X 5.30
+    This source file contains the code on how the Sleep Wakeup lab works.
  */
 
 /*
@@ -41,69 +34,51 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
-*/
+ */
 
 /**
   Section: Included Files
  */
 
+#include <pic18.h>
+
 #include "../../mcc_generated_files/pin_manager.h"
-#include "../../mcc_generated_files/interrupt_manager.h"
-#include "../../mcc_generated_files/tmr0.h"
 #include "../../labs.h"
 
 /**
-  Section: Local Function Prototypes
+  Section: Macro Declaration
  */
-void LAB_ISR(void);
-
-/**
-  Section: Local Variable Declarations
- */
-static uint8_t rotateReg;
+#define WDT_Enable()        (WDTCON0bits.SWDTEN = 1)
+#define WDT_Disable()       (WDTCON0bits.SWDTEN = 0)
 
 /*
                              Application    
  */
-void Interrupt(void) {
+void SleepWakeUp(void) {
 
     if (labState == NOT_RUNNING) {
-        LEDs_SetLow();
-        LED_D2_SetHigh();
-        
-        rotateReg = 1;
-       
-        INTERRUPT_GlobalInterruptEnable();
-        INTERRUPT_TMR0InterruptEnable();
-        
-        TMR0_SetInterruptHandler(LAB_ISR);
- 
+        LED_D2_LAT = LED_D4_LAT = HIGH;
+        LED_D3_LAT = LED_D5_LAT = LOW;
+
+        WDT_Enable();
+
+        SLEEP();
+
         labState = RUNNING;
     }
 
-    if(labState == RUNNING){ 
-        // Do nothing. Just wait for an interrupt event 
+    if (labState == RUNNING) {
+        //Wait 4 seconds for the WDT time out
+        //and reverse the states of the LEDs
+        LED_D2_LAT = LED_D4_LAT = LOW;
+        LED_D3_LAT = LED_D5_LAT = HIGH;
+
+        WDT_Disable();
     }
-    
+
     if (switchEvent) {
-        INTERRUPT_TMR0InterruptDisable();
-
-        INTERRUPT_GlobalInterruptDisable();
-
         labState = NOT_RUNNING;
     }
-}
-
-void LAB_ISR(void) {    
-    //If the last LED has been lit, restart the pattern    
-    if (rotateReg == 1) {
-        rotateReg = LAST;
-    }
-
-    rotateReg >>= 1;
-    
-    //Check which LED should be lit
-    LEDs = (rotateReg << 4);
 }
 /**
  End of File

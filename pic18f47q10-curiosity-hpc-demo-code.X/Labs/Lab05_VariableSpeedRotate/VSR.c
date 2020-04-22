@@ -12,13 +12,6 @@
 
   Description:
     This source file contains the code on how the VSR lab works.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.80.0
-        Device            :  PIC18F47Q10
-        Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10
-        MPLAB             :  MPLAB X 5.30
  */
 
 /*
