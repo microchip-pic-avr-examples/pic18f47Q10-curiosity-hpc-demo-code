@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47q10-curiosity-hpc-demo-code",
-        "version": "1.0.1 ",
+        "version": "1.0.2",
         "displayName": "PIC18F47Q10 High-Pin-Count Curiosity Board Demo Code",
         "projectName": "pic18f47q10-curiosity-hpc-demo-code",
         "shortDescription": "Demo code for HPC board for PIC18-Q10 devices",
@@ -46,13 +46,13 @@
                 "Peripherals", "UART"
              ],
              [
-                "Peripherals", "TMR1"
+                "Peripherals", "Timer"
              ],
              [
                  "Peripherals", "Interrupts"
              ],
              [
-                 "Peripherals", "WWDT"
+                 "Peripherals", "Watchdog"
              ],
              [
                  "Peripherals", "Sleep"
@@ -68,7 +68,8 @@
             "Demo Code",
             "Getting Started",
             "Q10",
-            "PIC18-Q10"			
+            "PIC18-Q10",
+            "Curiosity Board"		
         ],
 		"additionalData": {
 			"longDescription": {
