@@ -4,27 +4,27 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47q10-curiosity-hpc-demo-code",
-        "version": "1.0.2",
+        "version": "2.0.0",
         "displayName": "PIC18F47Q10 High-Pin-Count Curiosity Board Demo Code",
         "projectName": "pic18f47q10-curiosity-hpc-demo-code",
         "shortDescription": "Demo code for HPC board for PIC18-Q10 devices",
         "ide": {
             "name": "MPLABX",
-            "semverRange": ">=5.40.0"
+            "semverRange": ">=5.45.0"
         },
         "compiler": [
 			{
 				"name": "XC8",
-				"semverRange": "^2.20.0"
+				"semverRange": "^2.31.0"
 			}
 		],
         "dfp": {
             "name": "PIC18F-Q_DFP",
-            "semverRange": "^1.7.135"
+            "semverRange": "^1.11.185"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=3.95.0"
+            "semverRange": ">=4.1.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -69,7 +69,8 @@
             "Getting Started",
             "Q10",
             "PIC18-Q10",
-            "Curiosity Board"		
+            "Curiosity Board",
+            "Melody"		
         ],
 		"additionalData": {
 			"longDescription": {

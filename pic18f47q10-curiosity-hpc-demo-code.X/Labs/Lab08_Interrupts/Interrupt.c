@@ -40,9 +40,7 @@
   Section: Included Files
  */
 
-#include "../../mcc_generated_files/pin_manager.h"
-#include "../../mcc_generated_files/interrupt_manager.h"
-#include "../../mcc_generated_files/tmr0.h"
+#include "../../mcc_generated_files/system/system.h"
 #include "../../labs.h"
 
 /**
@@ -69,8 +67,7 @@ void Interrupt(void) {
         INTERRUPT_GlobalInterruptEnable();
         INTERRUPT_TMR0InterruptEnable();
         
-        TMR0_SetInterruptHandler(LAB_ISR);
- 
+        Timer0_OverflowCallbackRegister(LAB_ISR);
         labState = RUNNING;
     }
 

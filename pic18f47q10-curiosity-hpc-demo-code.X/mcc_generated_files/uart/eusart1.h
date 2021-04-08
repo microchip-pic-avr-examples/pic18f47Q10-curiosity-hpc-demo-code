@@ -8,40 +8,51 @@
     eusart1.h
 
   @Summary
-    This is the generated header file for the EUSART1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the generated header file for the EUSART1 driver using CCL
 
   @Description
     This header file provides APIs for driver for EUSART1.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F47Q10
+        Product Revision  :  CCL - 1.8.2
+        Device            :  PIC18F47Q43
         Driver Version    :  2.1.0
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB 	          :  MPLAB X 5.35
+        Compiler          :  XC8 v2.2
+        MPLAB 	          :  Standalone
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+Copyright (c) [2012-2020] Microchip Technology Inc.  
+
+    All rights reserved.
+
+    You are permitted to use the accompanying software and its derivatives 
+    with Microchip products. See the Microchip license agreement accompanying 
+    this software, if any, for additional info regarding your rights and 
+    obligations.
     
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
+    MICROCHIP SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT 
+    WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT 
+    LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT 
+    AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP OR ITS
+    LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT 
+    LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE 
+    THEORY FOR ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT 
+    LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, 
+    OR OTHER SIMILAR COSTS. 
     
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
+    To the fullest extend allowed by law, Microchip and its licensors 
+    liability will not exceed the amount of fees, if any, that you paid 
+    directly to Microchip to use this software. 
     
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    THIRD PARTY SOFTWARE:  Notwithstanding anything to the contrary, any 
+    third party software accompanying this software is subject to the terms 
+    and conditions of the third party's license agreement.  To the extent 
+    required by third party licenses covering such third party software, 
+    the terms of such license will apply in lieu of the terms provided in 
+    this notice or applicable license.  To the extent the terms of such 
+    third party licenses prohibit any of the restrictions described here, 
+    such restrictions will not apply to such third party software.
 */
 
 #ifndef EUSART1_H
@@ -54,20 +65,14 @@
 #include <xc.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include "uart_interface.h"
 #include <stdio.h>
-
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-
 
 /**
   Section: Macro Declarations
 */
 
-#define EUSART1_DataReady  (EUSART1_is_rx_ready())
+#define EUSART1_DataReady  (EUSART1_IsRxReady())
 
 /**
   Section: Data Type Definitions
@@ -83,6 +88,23 @@ typedef union {
     uint8_t status;
 }eusart1_status_t;
 
+//*********************************************************************************************************
+/**
+ * @deprecated
+ * Deprecated APIs start
+ */
+//*********************************************************************************************************
+
+bool __attribute__(( deprecated )) EUSART1_is_tx_ready(void);
+bool __attribute__(( deprecated )) EUSART1_is_rx_ready(void);
+bool __attribute__(( deprecated )) EUSART1_is_tx_done(void);
+eusart1_status_t EUSART1_get_last_status(void);
+
+/*************************************************************************************************************
+ * Deprecated APIs end
+ *************************************************************************************************************/
+
+extern const struct UART_INTERFACE EUSART1_Interface;
 
 /**
   Section: EUSART1 APIs
@@ -144,10 +166,10 @@ void EUSART1_Initialize(void);
         while(1)
         {
             // Logic to echo received data
-            if(EUSART1_is_rx_ready())
+            if(EUSART1_IsRxReady())
             {
                 rxData = UART1_Read();
-                if(EUSART1_is_tx_ready())
+                if(EUSART1_IsTxReady())
                 {
                     EUSART1Write(rxData);
                 }
@@ -156,7 +178,7 @@ void EUSART1_Initialize(void);
     }
     </code>
 */
-bool EUSART1_is_tx_ready(void);
+bool EUSART1_IsTxReady(void);
 
 /**
   @Summary
@@ -192,10 +214,10 @@ bool EUSART1_is_tx_ready(void);
         while(1)
         {
             // Logic to echo received data
-            if(EUSART1_is_rx_ready())
+            if(EUSART1_IsRxReady())
             {
                 rxData = UART1_Read();
-                if(EUSART1_is_tx_ready())
+                if(EUSART1_IsTxReady())
                 {
                     EUSART1_Write(rxData);
                 }
@@ -204,7 +226,7 @@ bool EUSART1_is_tx_ready(void);
     }
     </code>
 */
-bool EUSART1_is_rx_ready(void);
+bool EUSART1_IsRxReady(void);
 
 /**
   @Summary
@@ -238,12 +260,12 @@ bool EUSART1_is_rx_ready(void);
         
         while(1)
         {
-            if(EUSART1_is_tx_ready())
+            if(EUSART1_IsTxReady())
             {
 				LED_0_SetHigh();
                 EUSART1Write(rxData);
             }
-			if(EUSART1_is_tx_done()
+			if(EUSART1_IsTxDone()
             {
                 LED_0_SetLow();
             }
@@ -251,7 +273,7 @@ bool EUSART1_is_rx_ready(void);
     }
     </code>
 */
-bool EUSART1_is_tx_done(void);
+bool EUSART1_IsTxDone(void);
 
 /**
   @Summary
@@ -287,10 +309,10 @@ bool EUSART1_is_tx_done(void);
         while(1)
         {
             // Logic to echo received data
-            if(EUSART1_is_rx_ready())
+            if(EUSART1_IsRxReady())
             {
                 rxData = EUSART1_Read();
-                rxStatus = EUSART1_get_last_status();
+                rxStatus = EUSART1_GetLastStatus();
                 if(rxStatus.ferr){
                     LED_0_SetHigh();
                 }
@@ -299,7 +321,7 @@ bool EUSART1_is_tx_done(void);
     }
     </code>
  */
-eusart1_status_t EUSART1_get_last_status(void);
+eusart1_status_t EUSART1_GetLastStatus(void);
 
 /**
   @Summary
@@ -398,12 +420,6 @@ void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 void EUSART1_SetErrorHandler(void (* interruptHandler)(void));
 
 
-
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
 
 #endif  // EUSART1_H
 /**

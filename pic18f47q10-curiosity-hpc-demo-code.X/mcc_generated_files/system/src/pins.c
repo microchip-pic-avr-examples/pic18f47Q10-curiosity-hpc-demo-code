@@ -1,26 +1,21 @@
 /**
-  Generated Pin Manager File
+  Generated Pins File
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    pin_manager.c
+    pins.c
 
   Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is generated driver implementation for pins. 
 
   Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F47Q10
-        Driver Version    :  2.11
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB             :  MPLAB X 5.35
+    This file provides implementations for pin APIs for all pins selected in the GUI.
 
-    Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
+  Generation Information:
+    Driver Version:  3.0.0
+
 */
 
 /*
@@ -46,58 +41,55 @@
     SOFTWARE.
 */
 
-#include "pin_manager.h"
-
-
-
+#include "../pins.h"
 
 
 void PIN_MANAGER_Initialize(void)
 {
-    /**
+   /**
     LATx registers
     */
-    LATE = 0x00;
-    LATD = 0x00;
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    LATA = 0x0;
+    LATB = 0x0;
+    LATC = 0x0;
+    LATD = 0x0;
+    LATE = 0x0;
 
     /**
     TRISx registers
     */
-    TRISE = 0x07;
-    TRISA = 0x0F;
+    TRISA = 0xF;
     TRISB = 0xFF;
     TRISC = 0xBF;
     TRISD = 0xFF;
+    TRISE = 0x7;
 
     /**
     ANSELx registers
     */
-    ANSELD = 0xFF;
-    ANSELC = 0xDF;
-    ANSELB = 0xEF;
-    ANSELE = 0x07;
-    ANSELA = 0x0F;
+    ANSELA = 0x1;
+    ANSELB = 0x0;
+    ANSELC = 0x0;
+    ANSELD = 0x0;
+    ANSELE = 0x0;
 
     /**
     WPUx registers
     */
-    WPUD = 0x00;
-    WPUE = 0x00;
-    WPUB = 0x00;
-    WPUA = 0x00;
-    WPUC = 0x00;
+    WPUA = 0x0;
+    WPUB = 0x0;
+    WPUC = 0x0;
+    WPUD = 0x0;
+    WPUE = 0x0;
 
     /**
     ODx registers
     */
-    ODCONE = 0x00;
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-    ODCOND = 0x00;
+    ODCONA = 0x0;
+    ODCONB = 0x0;
+    ODCONC = 0x0;
+    ODCOND = 0x0;
+    ODCONE = 0x0;
 
     /**
     SLRCONx registers
@@ -106,7 +98,7 @@ void PIN_MANAGER_Initialize(void)
     SLRCONB = 0xFF;
     SLRCONC = 0xFF;
     SLRCOND = 0xFF;
-    SLRCONE = 0x07;
+    SLRCONE = 0x7;
 
     /**
     INLVLx registers
@@ -115,21 +107,34 @@ void PIN_MANAGER_Initialize(void)
     INLVLB = 0xFF;
     INLVLC = 0xFF;
     INLVLD = 0xFF;
-    INLVLE = 0x0F;
+    INLVLE = 0xF;
+    /**
+    PPS registers
+    */
+    RX1PPS = 0x15; //RC5->EUSART1:RX1;
+    RC6PPS = 0x09;  //RC6->EUSART1:TX1;
+
+   /**
+    IOCx registers 
+    */
+    IOCAP = 0x0;
+    IOCAN = 0x0;
+    IOCAF = 0x0;
+    IOCBP = 0x0;
+    IOCBN = 0x0;
+    IOCBF = 0x0;
+    IOCCP = 0x0;
+    IOCCN = 0x0;
+    IOCCF = 0x0;
+    IOCEP = 0x0;
+    IOCEN = 0x0;
+    IOCEF = 0x0;
 
 
-
-
-
-   
-    
-	
-    RX1PPS = 0x15;   //RC5->EUSART1:RX1;    
-    RC6PPS = 0x09;   //RC6->EUSART1:TX1;    
 }
   
 void PIN_MANAGER_IOC(void)
-{   
+{
 }
 
 /**
