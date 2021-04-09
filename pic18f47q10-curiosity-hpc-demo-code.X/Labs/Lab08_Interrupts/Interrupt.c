@@ -65,6 +65,7 @@ void Interrupt(void) {
         rotateReg = 1;
        
         INTERRUPT_GlobalInterruptEnable();
+        INTERRUPT_PeripheralInterruptEnable();
         INTERRUPT_TMR0InterruptEnable();
         
         Timer0_OverflowCallbackRegister(LAB_ISR);
@@ -77,9 +78,8 @@ void Interrupt(void) {
     
     if (switchEvent) {
         INTERRUPT_TMR0InterruptDisable();
-
         INTERRUPT_GlobalInterruptDisable();
-
+        INTERRUPT_PeripheralInterruptDisable();
         labState = NOT_RUNNING;
     }
 }

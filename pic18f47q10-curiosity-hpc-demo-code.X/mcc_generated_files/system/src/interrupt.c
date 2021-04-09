@@ -93,32 +93,20 @@ void  INTERRUPT_Initialize (void)
 
 }
 
-//void __interrupt() INTERRUPT_InterruptManager (void)
-//{
-//    // interrupt handler
-//    if(INTCONbits.PEIE == 1)
-//    {
-//        if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
-//        {
-//            Timer0_OverflowISR();
-//        } 
-//        else
-//        {
-//            //Unhandled Interrupt
-//        }
-//    }      
-//    else
-//    {
-//        //Unhandled Interrupt
-//    }
-//}
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
+    if(INTCONbits.PEIE == 1)
     {
-        Timer0_OverflowISR();
-    } 
+        if(PIE0bits.TMR0IE == 1 && PIR0bits.TMR0IF == 1)
+        {
+            Timer0_OverflowISR();
+        } 
+        else
+        {
+            //Unhandled Interrupt
+        }
+    }      
     else
     {
         //Unhandled Interrupt

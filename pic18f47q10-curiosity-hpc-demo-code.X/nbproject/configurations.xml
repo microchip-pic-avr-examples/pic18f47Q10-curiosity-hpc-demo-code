@@ -316,6 +316,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C50931/Projects/MCC_Porting_PIC18F47Q10_HPC_demo/pic18f47q10-curiosity-hpc-demo-code.X/debug/free/pic18f47q10-curiosity-hpc-demo-code_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -505,6 +507,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="memories.rww" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/C50931/Projects/MCC_Porting_PIC18F47Q10_HPC_demo/pic18f47q10-curiosity-hpc-demo-code.X/debug/pro/pic18f47q10-curiosity-hpc-demo-code_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
