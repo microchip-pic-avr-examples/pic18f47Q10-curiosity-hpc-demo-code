@@ -347,11 +347,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.10</languageToolchainVersion>
+        <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.4.109"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.11.185"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

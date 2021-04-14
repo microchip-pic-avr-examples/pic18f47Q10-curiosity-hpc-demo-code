@@ -100,7 +100,7 @@ void Timer1_Initialize(void)
     PIR4bits.TMR1IF = 0;
     PIR5bits.TMR1GIF = 0;
     
-    T1CON = 0x01;
+    T1CON = 0x0;
 }
 
 void Timer1_Start(void)

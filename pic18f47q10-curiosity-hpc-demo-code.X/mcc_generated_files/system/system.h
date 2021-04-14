@@ -60,15 +60,15 @@ Copyright (c) [2012-2020] Microchip Technology Inc.
 #include <stdbool.h>
 #include <conio.h>
 #include "config_bits.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
 #include "../timer/tmr1.h"
 #include "../pwm/pwm3.h"
+#include "../system/clock.h"
+#include "../system/interrupt.h"
 #include "../uart/eusart1.h"
-#include "../adc/adcc.h"
-#include "../timer/tmr2.h"
 #include "../timer/tmr0.h"
 #include "../flash/flash.h"
+#include "../timer/tmr2.h"
+#include "../adc/adcc.h"
 #include "../system/pins.h"
 
 /**

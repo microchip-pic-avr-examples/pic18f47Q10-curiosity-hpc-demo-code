@@ -13,7 +13,7 @@
     Generation Information :
         Driver Version    :  1.0.0
     The generated drivers are tested against the following:
-        MPLAB             :  MPLAB X v5.45
+        MPLAB             :  MPLAB X v5.40
 */
 
 /*
