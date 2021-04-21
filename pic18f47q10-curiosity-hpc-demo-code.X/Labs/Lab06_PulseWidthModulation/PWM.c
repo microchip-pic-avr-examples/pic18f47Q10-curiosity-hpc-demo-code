@@ -40,11 +40,7 @@
   Section: Included Files
  */
 
-#include "../../mcc_generated_files/pin_manager.h"
-#include "../../mcc_generated_files/adcc.h"
-#include "../../mcc_generated_files/pwm3.h"
-#include "../../mcc_generated_files/tmr2.h"
-#include "../../mcc_generated_files/eusart1.h"
+#include "../../mcc_generated_files/system/system.h"
 #include "../../labs.h"
 
 /**
@@ -65,7 +61,7 @@ void PWM(void) {
     if (labState == NOT_RUNNING) {
         LEDs_SetLow();
         PWM_Output_D5_Enable();
-        TMR2_StartTimer();
+        Timer2_Start();
 
         labState = RUNNING;
     }
@@ -78,7 +74,7 @@ void PWM(void) {
     }
 
     if (switchEvent) {
-        TMR2_StopTimer();
+        Timer2_Stop();
         PWM_Output_D5_Disable();
         labState = NOT_RUNNING;
     }

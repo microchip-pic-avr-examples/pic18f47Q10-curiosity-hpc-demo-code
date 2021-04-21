@@ -8,40 +8,49 @@
     adcc.h
 
   @Summary
-    This is the generated header file for the ADCC driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs 
+    This is the generated header file for the ADCC driver.
 
   @Description
-    This header file provides APIs for driver for ADCC.
+    This header file provides APIs for the ADCC driver.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F47Q10
         Driver Version    :  2.1.4
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB             :  MPLAB X 5.35
+        Compiler          :  XC8 v2.30
+        MPLAB             :  MPLABX v5.45
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+Copyright (c) [2012-2020] Microchip Technology Inc.  
+
+    All rights reserved.
+
+    You are permitted to use the accompanying software and its derivatives 
+    with Microchip products. See the Microchip license agreement accompanying 
+    this software, if any, for additional info regarding your rights and 
+    obligations.
     
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
+    MICROCHIP SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT 
+    WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT 
+    LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT 
+    AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP OR ITS
+    LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT 
+    LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE 
+    THEORY FOR ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT 
+    LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, 
+    OR OTHER SIMILAR COSTS. 
     
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
+    To the fullest extend allowed by law, Microchip and its licensors 
+    liability will not exceed the amount of fees, if any, that you paid 
+    directly to Microchip to use this software. 
     
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    THIRD PARTY SOFTWARE:  Notwithstanding anything to the contrary, any 
+    third party software accompanying this software is subject to the terms 
+    and conditions of the third party's license agreement.  To the extent 
+    required by third party licenses covering such third party software, 
+    the terms of such license will apply in lieu of the terms provided in 
+    this notice or applicable license.  To the extent the terms of such 
+    third party licenses prohibit any of the restrictions described here, 
+    such restrictions will not apply to such third party software.
 */
 
 #ifndef ADCC_H
@@ -51,15 +60,8 @@
   Section: Included Files
 */
 
-#include <xc.h>
 #include <stdint.h>
 #include <stdbool.h>
-
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
 
 /**
   Section: Data Types Definitions
@@ -85,11 +87,11 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
-    POT_CHANNEL =  0x0,
-    channel_VSS =  0x3C,
-    channel_Temp =  0x3D,
-    channel_DAC1 =  0x3E,
-    channel_FVR_buf1 =  0x3F
+    channel_VSS =  0x3c,
+    channel_Temp =  0x3d,
+    channel_DAC1 =  0x3e,
+    channel_FVR_buf1 =  0x3f,
+    POT_CHANNEL =  0x0
 } adcc_channel_t;
 
 /**
@@ -349,7 +351,7 @@ void ADCC_DischargeSampleCapacitor(void);
     ADCC_LoadAcquisitionRegister(acquisitionValue);
     </code>
 */
-void ADCC_LoadAcquisitionRegister(uint8_t);
+void ADCC_LoadAcquisitionRegister(uint8_t acquisitionValue);
 
 /**
   @Summary
@@ -375,7 +377,7 @@ void ADCC_LoadAcquisitionRegister(uint8_t);
     ADCC_SetPrechargeTime(prechargeTime);
     </code>
 */
-void ADCC_SetPrechargeTime(uint8_t);
+void ADCC_SetPrechargeTime(uint8_t prechargeTime);
 
 /**
   @Summary
@@ -400,7 +402,7 @@ void ADCC_SetPrechargeTime(uint8_t);
     ADCC_SetRepeatCount(repeat);
     </code>
 */
-void ADCC_SetRepeatCount(uint8_t);
+void ADCC_SetRepeatCount(uint8_t repeatCount);
 
 /**
   @Summary
@@ -584,7 +586,7 @@ uint16_t ADCC_GetPreviousResult(void);
     ADCC_StartConversion(channel_ANA0);
     </code>
 */
-void ADCC_DefineSetPoint(uint16_t);
+void ADCC_DefineSetPoint(uint16_t setPoint);
 
 /**
   @Summary
@@ -610,7 +612,7 @@ void ADCC_DefineSetPoint(uint16_t);
         ADCC_StartConversion(channel_ANA0);
     </code>
 */
-void ADCC_SetUpperThreshold(uint16_t);
+void ADCC_SetUpperThreshold(uint16_t upperThreshold);
 
 /**
   @Summary
@@ -636,7 +638,7 @@ void ADCC_SetUpperThreshold(uint16_t);
     ADCC_StartConversion(channel_ANA0);    
     </code>
 */
-void ADCC_SetLowerThreshold(uint16_t);
+void ADCC_SetLowerThreshold(uint16_t lowerThreshold);
 
 /**
   @Summary
@@ -825,15 +827,7 @@ uint8_t ADCC_GetConversionStageStatus(void);
 
 
 
-
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    }
-
-#endif
-
-#endif    //ADCC_H
 /**
- End of File
-*/
-
+ * @}
+ */
+#endif//ADCC_H

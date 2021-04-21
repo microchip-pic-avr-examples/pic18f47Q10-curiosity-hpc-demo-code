@@ -8,40 +8,49 @@
     adcc.c
 
   @Summary
-    This is the generated driver implementation file for the ADCC driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the generated driver implementation file for the ADCC driver.
 
   @Description
-    This source file provides implementations for driver APIs for ADCC.
+    This source file provides APIs for driver for ADCC.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F47Q10
         Driver Version    :  2.1.4
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB             :  MPLAB X 5.35
+        Compiler          :  XC8 v2.30
+        MPLAB             :  MPLABX v5.45
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+Copyright (c) [2012-2020] Microchip Technology Inc.  
+
+    All rights reserved.
+
+    You are permitted to use the accompanying software and its derivatives 
+    with Microchip products. See the Microchip license agreement accompanying 
+    this software, if any, for additional info regarding your rights and 
+    obligations.
     
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
+    MICROCHIP SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT 
+    WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT 
+    LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT 
+    AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP OR ITS
+    LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT 
+    LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE 
+    THEORY FOR ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT 
+    LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, 
+    OR OTHER SIMILAR COSTS. 
     
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
+    To the fullest extend allowed by law, Microchip and its licensors 
+    liability will not exceed the amount of fees, if any, that you paid 
+    directly to Microchip to use this software. 
     
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    THIRD PARTY SOFTWARE:  Notwithstanding anything to the contrary, any 
+    third party software accompanying this software is subject to the terms 
+    and conditions of the third party's license agreement.  To the extent 
+    required by third party licenses covering such third party software, 
+    the terms of such license will apply in lieu of the terms provided in 
+    this notice or applicable license.  To the extent the terms of such 
+    third party licenses prohibit any of the restrictions described here, 
+    such restrictions will not apply to such third party software.
 */
 
 /**
@@ -49,7 +58,7 @@
 */
 
 #include <xc.h>
-#include "adcc.h"
+#include "../adcc.h"
 
 /**
   Section: ADCC Module Variables
@@ -63,45 +72,49 @@ void ADCC_Initialize(void)
 {
     // set the ADCC to the options selected in the User Interface
     // ADLTHL 0; 
-    ADLTHL = 0x00;
+    ADLTHL = 0x0;
     // ADLTHH 0; 
-    ADLTHH = 0x00;
+    ADLTHH = 0x0;
     // ADUTHL 0; 
-    ADUTHL = 0x00;
+    ADUTHL = 0x0;
     // ADUTHH 0; 
-    ADUTHH = 0x00;
+    ADUTHH = 0x0;
     // ADSTPTL 0; 
-    ADSTPTL = 0x00;
+    ADSTPTL = 0x0;
     // ADSTPTH 0; 
-    ADSTPTH = 0x00;
+    ADSTPTH = 0x0;
     // ADRPT 0; 
-    ADRPT = 0x00;
-    // ADPCH ANA0; 
-    ADPCH = 0x00;
+    ADRPT = 0x0;
+    // CHS ANA0; 
+    ADPCH = 0x0;
     // ADCAP Additional uC disabled; 
-    ADCAP = 0x00;
+    ADCAP = 0x0;
     // ADPRE 0; 
-    ADPRE = 0x00;
+    ADPRE = 0x0;
     // ADDSEN disabled; ADGPOL digital_low; ADIPEN disabled; ADPPOL VSS; 
-    ADCON1 = 0x00;
+    ADCON1 = 0x0;
     // ADCRS 0; ADMD Basic_mode; ADACLR disabled; ADPSIS ADRES; 
-    ADCON2 = 0x00;
+    ADCON2 = 0x0;
     // ADCALC First derivative of Single measurement; ADTMD disabled; ADSOI ADGO not cleared; 
-    ADCON3 = 0x00;
+    ADCON3 = 0x0;
     // ADAOV ACC or ADERR not Overflowed; 
-    ADSTAT = 0x00;
+    ADSTAT = 0x0;
     // ADNREF VSS; ADPREF VDD; 
-    ADREF = 0x00;
+    ADREF = 0x0;
     // ADACT disabled; 
-    ADACT = 0x00;
-    // ADCS FOSC/2; 
-    ADCLK = 0x00;
-    // ADGO stop; ADFM left; ADON enabled; ADCONT disabled; ADCS FOSC/ADCLK; 
-    ADCON0 = 0x80;
+    ADACT = 0x0;
+    // ADCCS FOSC/2; 
+    ADCLK = 0x0;
+    // GO_nDONE undefined; ADFM left; ADON enabled; ADCONT disabled; ADCS FOSC; 
+    ADCON0 = 0x81;
     // ADACQ 0; 
-    ADACQ = 0x00;
+    ADACQ = 0x0;
     
+    // Clear the ADC interrupt flag
+    PIR1bits.ADIF = 0;
 
+    // Clear the ADC Threshold interrupt flag
+    PIR1bits.ADTIF = 0;
 }
 
 void ADCC_StartConversion(adcc_channel_t channel)
@@ -146,7 +159,6 @@ adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel)
     // Wait for the conversion to finish
     while (ADCON0bits.ADGO)
     {
-        CLRWDT();
     }
     
     
@@ -169,19 +181,19 @@ void ADCC_SetStopOnInterrupt(void)
 void ADCC_DischargeSampleCapacitor(void)
 {
     //Set the ADC channel to AVss.
-    ADPCH = 0x3c;   
+    ADPCH = 0x3B;   
 }
 
 void ADCC_LoadAcquisitionRegister(uint8_t acquisitionValue)
 {
     //Load the ADACQ register.
-    ADACQ = acquisitionValue;   
+    ADACQ = (uint8_t) acquisitionValue;
 }
 
 void ADCC_SetPrechargeTime(uint8_t prechargeTime)
 {
     //Load the ADPRE register.
-    ADPRE = prechargeTime;  
+    ADPRE = (uint8_t) prechargeTime;
 }
 
 void ADCC_SetRepeatCount(uint8_t repeatCount)
@@ -229,22 +241,22 @@ uint16_t ADCC_GetPreviousResult(void)
 void ADCC_DefineSetPoint(uint16_t setPoint)
 {
     //Sets the ADSTPTH and ADSTPTL registers
-    ADSTPTH = setPoint >> 8;
-    ADSTPTL = setPoint;
+    ADSTPTH = (uint8_t) setPoint >> 8;
+    ADSTPTL = (uint8_t) setPoint;
 }
 
 void ADCC_SetUpperThreshold(uint16_t upperThreshold)
 {
     //Sets the ADUTHH and ADUTHL registers
-    ADUTHH = upperThreshold >> 8;
-    ADUTHL = upperThreshold;
+    ADUTHH = (uint8_t) upperThreshold >> 8;
+    ADUTHL = (uint8_t) upperThreshold;
 }
 
 void ADCC_SetLowerThreshold(uint16_t lowerThreshold)
 {
     //Sets the ADLTHH and ADLTHL registers
-    ADLTHH = lowerThreshold >> 8;
-    ADLTHL = lowerThreshold;
+    ADLTHH = (uint8_t) lowerThreshold >> 8;
+    ADLTHL = (uint8_t) lowerThreshold;
 }
 
 uint16_t ADCC_GetErrorCalculation(void)
@@ -290,6 +302,3 @@ uint8_t ADCC_GetConversionStageStatus(void)
 }
 
 
-/**
- End of File
-*/

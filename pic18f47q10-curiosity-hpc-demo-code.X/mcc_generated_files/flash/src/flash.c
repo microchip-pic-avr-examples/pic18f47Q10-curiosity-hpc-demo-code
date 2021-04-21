@@ -1,47 +1,58 @@
+
 /**
   MEMORY Generated Driver File
-
+ 
   @Company
     Microchip Technology Inc.
-
+ 
   @File Name
     memory.c
-
+ 
   @Summary
-    This is the generated driver implementation file for the MEMORY driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
-
+    This is the generated file for the MEMORY driver implementation
+ 
   @Description
-    This file provides implementations of driver APIs for MEMORY.
+    This source file provides driver APIs for MEMORY.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F47Q10
-        Driver Version    :  4.20
+        Device            :  
+        Driver Version    :  4.2.2
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB             :  MPLAB X 5.35
+        Compiler          :  XC8 v2.30
+        MPLAB             :  MPLABX v5.45
 */
 
 /*
-    (c) 2018 Microchip Technology Inc. and its subsidiaries. 
+Copyright (c) [2012-2020] Microchip Technology Inc.  
+
+    All rights reserved.
+
+    You are permitted to use the accompanying software and its derivatives 
+    with Microchip products. See the Microchip license agreement accompanying 
+    this software, if any, for additional info regarding your rights and 
+    obligations.
     
-    Subject to your compliance with these terms, you may use Microchip software and any 
-    derivatives exclusively with Microchip products. It is your responsibility to comply with third party 
-    license terms applicable to your use of third party software (including open source software) that 
-    may accompany Microchip software.
+    MICROCHIP SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT 
+    WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT 
+    LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT 
+    AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP OR ITS
+    LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT, NEGLIGENCE, STRICT 
+    LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE 
+    THEORY FOR ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT 
+    LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES, 
+    OR OTHER SIMILAR COSTS. 
     
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY 
-    IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS 
-    FOR A PARTICULAR PURPOSE.
+    To the fullest extend allowed by law, Microchip and its licensors 
+    liability will not exceed the amount of fees, if any, that you paid 
+    directly to Microchip to use this software. 
     
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP 
-    HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO 
-    THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL 
-    CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
-    OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
-    SOFTWARE.
+    THIRD PARTY SOFTWARE:  Notwithstanding anything to the contrary, any 
+    third party software accompanying this software is subject to the terms 
+    and conditions of the third party's license agreement.  To the extent 
+    required by third party licenses covering such third party software, 
+    the terms of such license will apply in lieu of the terms provided in 
+    this notice or applicable license.  To the extent the terms of such 
+    third party licenses prohibit any of the restrictions described here, 
+    such restrictions will not apply to such third party software.
 */
 
 /**
@@ -49,12 +60,18 @@
 */
 
 #include <xc.h>
-#include "memory.h"
-
+#include "../flash.h"
 
 /**
   Section: Flash Module APIs
 */
+//128-bytes of Sector RAM for  is available at 0xD00
+uint8_t sectorRAM __at(0xD00);
+
+void FLASH_Initialize(void)
+{
+    // No initialization needed.
+}
 
 uint8_t FLASH_ReadByte(uint32_t flashAddr)
 {
@@ -77,25 +94,18 @@ uint16_t FLASH_ReadWord(uint32_t flashAddr)
     NVMADRL = (uint8_t) (flashAddr & 0x000000FF);
     
     //NVMCON1.RD operations are not affected by NVMEN, ignore NVMEN
-    NVMCON1bits.RD = 1;
-    while (NVMCON1bits.RD);
+    RD = 1;
+    while (RD);
     
     return ((((uint16_t)NVMDATH) << 8) | NVMDATL);
 }
 
-/**
- * @brief This routine reads one block from given address of Program Flash Memory
- *        into device Sector RAM
- * @return None
- * @param [in] Starting address of a Program Flash Memory block
- * @example This API is local to memory module and will be used by FLASH_WriteWord() API
- */
-static void FLASH_ReadSector(uint32_t flashAddr)
+void FLASH_ReadSector(uint32_t flashAddr)
 {
     uint8_t GIEBitValue = INTCONbits.GIE;
         
     //Enable NVM access
-    NVMCON0bits.NVMEN = 1;
+    NVMEN = 1;
 
     //Set NVMADR with the target word address
     NVMADRU = (uint8_t) ((flashAddr & 0x00FF0000) >> 16);
@@ -110,28 +120,22 @@ static void FLASH_ReadSector(uint32_t flashAddr)
     NVMCON2 = 0x44;
 
     //Start sector read and wait for the operation to complete
-    NVMCON1bits.SECRD = 1;
-    while (NVMCON1bits.SECRD);
+    SECRD = 1;
+    while (SECRD);
 
     //Restore the interrupts
     INTCONbits.GIE = GIEBitValue;
 
     //Disable NVM access
-    NVMCON0bits.NVMEN = 0;
+    NVMEN = 0;
 }
 
-/**
- * @brief This routine writes one block from Sector RAM to given address of Program Flash Memory
- * @return None
- * @param [in] Starting address of a Program Flash Memory block
- * @example This API is local to memory module and will be used by FLASH_WriteWord() API
- */
-static void FLASH_WriteSector(uint32_t flashAddr)
+void FLASH_WriteSector(uint32_t flashAddr)
 {
     uint8_t GIEBitValue = INTCONbits.GIE;
     
     //Enable NVM access
-    NVMCON0bits.NVMEN = 1;
+    NVMEN = 1;
 
     //Set NVMADR with the target word address
     NVMADRU = (uint8_t) ((flashAddr & 0x00FF0000) >> 16);
@@ -146,17 +150,16 @@ static void FLASH_WriteSector(uint32_t flashAddr)
     NVMCON2 = 0x22;
 
     //Start sector write and wait for the operation to complete
-    NVMCON1bits.SECWR = 1;
-    while (NVMCON1bits.SECWR);
+    SECWR = 1;
+    while (SECWR);
 
     //Restore the interrupts
     INTCONbits.GIE = GIEBitValue;
 
     //Disable NVM access
-    NVMCON0bits.NVMEN = 0;
+    NVMEN = 0;
 }
 
-uint8_t sectorRAM __at(0xD00);
 void FLASH_WriteWord(uint32_t flashAddr, uint16_t word)
 {
     uint16_t *secramWordPtr = (uint16_t*) & sectorRAM;
@@ -208,7 +211,7 @@ void FLASH_EraseBlock(uint32_t flashAddr)
 {
     uint8_t GIEBitValue = INTCONbits.GIE;
     
-    NVMCON0bits.NVMEN = 1;    // Enable NVM access
+    NVMEN = 1;    // Enable NVM access
 
     //Set NVMADR with the target word address
     NVMADRU = (uint8_t) ((flashAddr & 0x00FF0000) >> 16);
@@ -223,14 +226,14 @@ void FLASH_EraseBlock(uint32_t flashAddr)
     NVMCON2 = 0x33;
 
     //Start block erase and wait for the operation to complete
-    NVMCON1bits.SECER = 1;
-    while (NVMCON1bits.SECER);
+    SECER = 1;
+    while (SECER);
 
     //Restore the interrupts
     INTCONbits.GIE = GIEBitValue;
 
     //Disable NVM access
-    NVMCON0bits.NVMEN = 0;
+    NVMEN = 0;
 }
 
 /**
@@ -249,7 +252,7 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData)
     NVMDATL = (uint8_t)(bData & 0xFF);
     
     //Enable NVM access
-    NVMCON0bits.NVMEN = 1;
+    NVMEN = 1;
     
     //Disable interrupts
     INTCONbits.GIE = 0;
@@ -259,14 +262,14 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData)
     NVMCON2 = 0xAA;
 
     //Start DATAEE write and wait for the operation to complete
-    NVMCON1bits.WR = 1;
-    while (NVMCON1bits.WR);
+    WR = 1;
+    while (WR);
 
     //Restore all the interrupts
     INTCONbits.GIE = GIEBitValue;
 
     //Disable NVM access
-    NVMCON0bits.NVMEN = 0;
+    NVMEN = 0;
 }
 
 uint8_t DATAEE_ReadByte(uint16_t bAdd)
@@ -278,18 +281,9 @@ uint8_t DATAEE_ReadByte(uint16_t bAdd)
     
 
     //Start DATAEE read
-    NVMCON1bits.RD = 1;
+    RD = 1;
     NOP();  // NOPs may be required for latency at high frequencies
     NOP();
 
     return (NVMDATL);
 }
-
-void MEMORY_ISR(void)
-{
-    /* TODO : Add interrupt handling code */
-    PIR7bits.NVMIF = 0;
-}
-/**
- End of File
-*/
