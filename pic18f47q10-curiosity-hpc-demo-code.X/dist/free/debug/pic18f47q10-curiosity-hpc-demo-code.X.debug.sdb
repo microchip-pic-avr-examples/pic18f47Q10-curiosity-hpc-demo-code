@@ -1,0 +1,1513 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F47Q10 ]
+[d frameptr 4065 ]
+"64 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab04_AnalogToDigitalConversion/ADC.c
+[e E12692 . `uc
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+POT_CHANNEL 0
+]
+"68 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab05_VariableSpeedRotate/VSR.c
+[e E12692 . `uc
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+POT_CHANNEL 0
+]
+"70 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab06_PulseWidthModulation/PWM.c
+[e E12692 . `uc
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+POT_CHANNEL 0
+]
+"70 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab10_EEPROM/EEPROM.c
+[e E12692 . `uc
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+POT_CHANNEL 0
+]
+"94 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/adc/src/adcc.c
+[e E12689 . `uc
+channel_VSS 60
+channel_Temp 61
+channel_DAC1 62
+channel_FVR_buf1 63
+POT_CHANNEL 0
+]
+"80 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[e E12706 . `uc
+TMR2_ROP_STARTS_TMRON 0
+TMR2_ROP_STARTS_TMRON_ERSHIGH 1
+TMR2_ROP_STARTS_TMRON_ERSLOW 2
+TMR2_ROP_RESETS_ERSBOTHEDGE 3
+TMR2_ROP_RESETS_ERSRISINGEDGE 4
+TMR2_ROP_RESETS_ERSFALLINGEDGE 5
+TMR2_ROP_RESETS_ERSLOW 6
+TMR2_ROP_RESETS_ERSHIGH 7
+TMR2_OS_STARTS_TMRON 8
+TMR2_OS_STARTS_ERSRISINGEDGE 9
+TMR2_OS_STARTS_ERSFALLINGEDGE 10
+TMR2_OS_STARTS_ERSBOTHEDGE 11
+TMR2_OS_STARTS_ERSFIRSTRISINGEDGE 12
+TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE 13
+TMR2_OS_STARTS_ERSRISINGEDGEDETECT 14
+TMR2_OS_STARTS_ERSFALLINGEDGEDETECT 15
+TMR2_OS_STARTS_TMRON_ERSHIGH 22
+TMR2_OS_STARTS_TMRON_ERSLOW 23
+TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT 17
+TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT 18
+TMR2_MS_STARTS_TMRON_ERSBOTHEDGE 19
+]
+"86
+[e E12729 . `uc
+TMR2_T2INPPS_PIN 0
+TMR2_TMR4_POSTSCALED 2
+TMR2_TMR6_POSTSCALED 3
+TMR2_CCP1_OUT 4
+TMR2_CCP2_OUT 5
+TMR2_PWM3_OUT 6
+TMR2_PWM4_OUT 7
+TMR2_SYNC_C1OUT 8
+TMR2_SYNC_C2OUT 9
+TMR2_ZCD_OUT 10
+TMR2_EUSART1_DT 12
+TMR2_EUSART1_TX_CK 13
+TMR2_EUSART2_DT 14
+TMR2_EUSART2_TX_CK 15
+TMR2_CLC1_OUT 16
+TMR2_CLC2_OUT 17
+TMR2_CLC3_OUT 18
+TMR2_CLC4_OUT 19
+TMR2_CLC5_OUT 20
+TMR2_CLC6_OUT 21
+TMR2_CLC7_OUT 22
+TMR2_CLC8_OUT 23
+]
+"53 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/nvm/src/nvm.c
+[e E12692 . `uc
+NVM_OK 0
+NVM_ERROR 1
+]
+"1 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"152 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _pad pad `(v  1 s 1 pad ]
+"470
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+"1048
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1546
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"50 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab01_HelloWorld/HelloWorld.c
+[v _HelloWorld HelloWorld `(v  1 e 1 0 ]
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab02_Blink/Blink.c
+[v _Blink Blink `(v  1 e 1 0 ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab03_Rotate/Rotate.c
+[v _Rotate Rotate `(v  1 e 1 0 ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab04_AnalogToDigitalConversion/ADC.c
+[v _ADC ADC `(v  1 e 1 0 ]
+"55 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab05_VariableSpeedRotate/VSR.c
+[v _VSR VSR `(v  1 e 1 0 ]
+"60 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab06_PulseWidthModulation/PWM.c
+[v _PWM PWM `(v  1 e 1 0 ]
+"83
+[v _PWM_Output_D5_Enable PWM_Output_D5_Enable `(v  1 e 1 0 ]
+"94
+[v _PWM_Output_D5_Disable PWM_Output_D5_Disable `(v  1 e 1 0 ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab07_Timers/Timers.c
+[v _Timers Timers `(v  1 e 1 0 ]
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab08_Interrupts/Interrupt.c
+[v _Interrupt Interrupt `(v  1 e 1 0 ]
+"87
+[v _LAB_ISR LAB_ISR `(v  1 e 1 0 ]
+"55 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab09_SleepWakeup/SleepWakeUp.c
+[v _SleepWakeUp SleepWakeUp `(v  1 e 1 0 ]
+"60 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab10_EEPROM/EEPROM.c
+[v _EEPROM EEPROM `(v  1 e 1 0 ]
+"42 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"96
+[v _checkButtonS1 checkButtonS1 `(v  1 e 1 0 ]
+"108
+[v _nextLab nextLab `(v  1 e 1 0 ]
+"45 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/adc/src/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+"118
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+"43 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/nvm/src/nvm.c
+[v _NVM_Initialize NVM_Initialize `(v  1 e 1 0 ]
+"65
+[v _NVM_StatusClear NVM_StatusClear `(v  1 e 1 0 ]
+"70
+[v _NVM_UnlockKeySet NVM_UnlockKeySet `(v  1 e 1 0 ]
+"317
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
+"336
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+"45 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/pwm/src/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+"62
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+"37 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+"42 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"80
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"113
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"122
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"126
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"139
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"148
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"152
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"165
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+"174
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"178
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"38 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"133
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"36 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"74
+[v _TMR0_Start TMR0_Start `(v  1 e 1 0 ]
+"79
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
+"100
+[v _TMR0_Reload TMR0_Reload `(v  1 e 1 0 ]
+"106
+[v _TMR0_OverflowISR TMR0_OverflowISR `(v  1 e 1 0 ]
+"116
+[v _TMR0_OverflowCallbackRegister TMR0_OverflowCallbackRegister `(v  1 e 1 0 ]
+"121
+[v _TMR0_DefaultOverflowCallback TMR0_DefaultOverflowCallback `(v  1 s 1 TMR0_DefaultOverflowCallback ]
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"89
+[v _TMR1_Start TMR1_Start `(v  1 e 1 0 ]
+"95
+[v _TMR1_Stop TMR1_Stop `(v  1 e 1 0 ]
+"115
+[v _TMR1_Write TMR1_Write `(v  1 e 1 0 ]
+"137
+[v _TMR1_Reload TMR1_Reload `(v  1 e 1 0 ]
+"158
+[v _TMR1_OverflowCallbackRegister TMR1_OverflowCallbackRegister `(v  1 e 1 0 ]
+"163
+[v _TMR1_DefaultOverflowCallback TMR1_DefaultOverflowCallback `(v  1 s 1 TMR1_DefaultOverflowCallback ]
+"169
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+"184
+[v _TMR1_GateCallbackRegister TMR1_GateCallbackRegister `(v  1 e 1 0 ]
+"189
+[v _TMR1_DefaultGateCallback TMR1_DefaultGateCallback `(v  1 s 1 TMR1_DefaultGateCallback ]
+"195
+[v _TMR1_Tasks TMR1_Tasks `(v  1 e 1 0 ]
+"57 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"92
+[v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
+"98
+[v _TMR2_Stop TMR2_Stop `(v  1 e 1 0 ]
+"117
+[v _TMR2_PeriodCountSet TMR2_PeriodCountSet `(v  1 e 1 0 ]
+"122
+[v _TMR2_OverflowCallbackRegister TMR2_OverflowCallbackRegister `(v  1 e 1 0 ]
+"126
+[v _TMR2_DefaultOverflowCallback TMR2_DefaultOverflowCallback `(v  1 s 1 TMR2_DefaultOverflowCallback ]
+"131
+[v _TMR2_Tasks TMR2_Tasks `(v  1 e 1 0 ]
+"94 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"115
+[v _EUSART1_Deinitialize EUSART1_Deinitialize `(v  1 e 1 0 ]
+"136
+[v _EUSART1_TransmitEnable EUSART1_TransmitEnable `T(v  1 e 1 0 ]
+"141
+[v _EUSART1_TransmitDisable EUSART1_TransmitDisable `T(v  1 e 1 0 ]
+"166
+[v _EUSART1_AutoBaudSet EUSART1_AutoBaudSet `T(v  1 e 1 0 ]
+"178
+[v _EUSART1_AutoBaudQuery EUSART1_AutoBaudQuery `T(a  1 e 1 0 ]
+"193
+[v _EUSART1_IsRxReady EUSART1_IsRxReady `(a  1 e 1 0 ]
+"198
+[v _EUSART1_IsTxReady EUSART1_IsTxReady `(a  1 e 1 0 ]
+"203
+[v _EUSART1_IsTxDone EUSART1_IsTxDone `(a  1 e 1 0 ]
+"208
+[v _EUSART1_ErrorGet EUSART1_ErrorGet `(ui  1 e 2 0 ]
+"213
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"235
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"240
+[v _EUSART1_DefaultFramingErrorCallback EUSART1_DefaultFramingErrorCallback `(v  1 s 1 EUSART1_DefaultFramingErrorCallback ]
+"245
+[v _EUSART1_DefaultOverrunErrorCallback EUSART1_DefaultOverrunErrorCallback `(v  1 s 1 EUSART1_DefaultOverrunErrorCallback ]
+"252
+[v _EUSART1_FramingErrorCallbackRegister EUSART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+"260
+[v _EUSART1_OverrunErrorCallbackRegister EUSART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+"66 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X/labs.h
+[v _labNumber labNumber `uc  1 e 1 0 ]
+"67
+[v _switchEvent switchEvent `uc  1 e 1 0 ]
+"68
+[v _labState labState `uc  1 e 1 0 ]
+"69
+[v _btnState btnState `uc  1 e 1 0 ]
+"11996 C:/Program Files/Microchip/MPLABX/v6.10/packs/Microchip/PIC18F-Q_DFP/1.17.379/xc8\pic\include\proc\pic18f47q10.h
+[v _PPSLOCK PPSLOCK `VEuc  1 e 1 @3739 ]
+[s S196 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+]
+"12006
+[u S198 . 1 `S196 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES198  1 e 1 @3739 ]
+"13660
+[v _RX1PPS RX1PPS `VEuc  1 e 1 @3760 ]
+[s S865 . 1 `uc 1 INT0IE 1 0 :1:0 
+`uc 1 INT1IE 1 0 :1:1 
+`uc 1 INT2IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"15230
+[u S872 . 1 `S865 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES872  1 e 1 @3773 ]
+[s S818 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 INT1IF 1 0 :1:1 
+`uc 1 INT2IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"15647
+[u S825 . 1 `S818 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES825  1 e 1 @3781 ]
+[s S411 . 1 `uc 1 ADIF 1 0 :1:0 
+`uc 1 ADTIF 1 0 :1:1 
+`uc 1 . 1 0 :4:2 
+`uc 1 CSWIF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"15691
+[u S417 . 1 `S411 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES417  1 e 1 @3782 ]
+[s S1929 . 1 `uc 1 SSPIF 1 0 :1:0 
+`uc 1 BCLIF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 TX2IF 1 0 :1:6 
+`uc 1 RC2IF 1 0 :1:7 
+]
+"15779
+[s S1938 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S1944 . 1 `S1929 1 . 1 0 `S1938 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1944  1 e 1 @3784 ]
+[s S1021 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 TMR3IF 1 0 :1:2 
+`uc 1 TMR4IF 1 0 :1:3 
+`uc 1 TMR5IF 1 0 :1:4 
+`uc 1 TMR6IF 1 0 :1:5 
+]
+"15859
+[u S1028 . 1 `S1021 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES1028  1 e 1 @3785 ]
+[s S1038 . 1 `uc 1 TMR1GIF 1 0 :1:0 
+`uc 1 TMR3GIF 1 0 :1:1 
+`uc 1 TMR5GIF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CLC1IF 1 0 :1:4 
+`uc 1 CLC2IF 1 0 :1:5 
+`uc 1 CLC3IF 1 0 :1:6 
+`uc 1 CLC4IF 1 0 :1:7 
+]
+"15911
+[u S1047 . 1 `S1038 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES1047  1 e 1 @3786 ]
+[s S321 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 WDTPS 1 0 :5:1 
+]
+"16074
+[s S324 . 1 `uc 1 SWDTEN 1 0 :1:0 
+]
+[s S326 . 1 `uc 1 WDTSEN 1 0 :1:0 
+]
+[s S328 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 WDTPS0 1 0 :1:1 
+`uc 1 WDTPS1 1 0 :1:2 
+`uc 1 WDTPS2 1 0 :1:3 
+`uc 1 WDTPS3 1 0 :1:4 
+`uc 1 WDTPS4 1 0 :1:5 
+]
+[u S335 . 1 `S321 1 . 1 0 `S324 1 . 1 0 `S326 1 . 1 0 `S328 1 . 1 0 ]
+[v _WDTCON0bits WDTCON0bits `VES335  1 e 1 @3789 ]
+"16627
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3795 ]
+"16767
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @3797 ]
+"16919
+[v _OSCEN OSCEN `VEuc  1 e 1 @3799 ]
+"16970
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3800 ]
+"17028
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @3801 ]
+"17765
+[v _RA5PPS RA5PPS `VEuc  1 e 1 @3815 ]
+"17809
+[v _RA6PPS RA6PPS `VEuc  1 e 1 @3816 ]
+"17853
+[v _RA7PPS RA7PPS `VEuc  1 e 1 @3817 ]
+"18513
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @3832 ]
+"19085
+[v _IOCAF IOCAF `VEuc  1 e 1 @3845 ]
+"19147
+[v _IOCAN IOCAN `VEuc  1 e 1 @3846 ]
+"19209
+[v _IOCAP IOCAP `VEuc  1 e 1 @3847 ]
+"19271
+[v _INLVLA INLVLA `VEuc  1 e 1 @3848 ]
+"19333
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3849 ]
+"19395
+[v _ODCONA ODCONA `VEuc  1 e 1 @3850 ]
+"19457
+[v _WPUA WPUA `VEuc  1 e 1 @3851 ]
+"19519
+[v _ANSELA ANSELA `VEuc  1 e 1 @3852 ]
+"19581
+[v _IOCBF IOCBF `VEuc  1 e 1 @3853 ]
+"19643
+[v _IOCBN IOCBN `VEuc  1 e 1 @3854 ]
+"19705
+[v _IOCBP IOCBP `VEuc  1 e 1 @3855 ]
+"19767
+[v _INLVLB INLVLB `VEuc  1 e 1 @3856 ]
+"19829
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3857 ]
+"19891
+[v _ODCONB ODCONB `VEuc  1 e 1 @3858 ]
+"19953
+[v _WPUB WPUB `VEuc  1 e 1 @3859 ]
+"20015
+[v _ANSELB ANSELB `VEuc  1 e 1 @3860 ]
+"20077
+[v _IOCCF IOCCF `VEuc  1 e 1 @3861 ]
+"20139
+[v _IOCCN IOCCN `VEuc  1 e 1 @3862 ]
+"20201
+[v _IOCCP IOCCP `VEuc  1 e 1 @3863 ]
+"20263
+[v _INLVLC INLVLC `VEuc  1 e 1 @3864 ]
+"20325
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3865 ]
+"20387
+[v _ODCONC ODCONC `VEuc  1 e 1 @3866 ]
+"20449
+[v _WPUC WPUC `VEuc  1 e 1 @3867 ]
+"20511
+[v _ANSELC ANSELC `VEuc  1 e 1 @3868 ]
+"20573
+[v _INLVLD INLVLD `VEuc  1 e 1 @3869 ]
+"20635
+[v _SLRCOND SLRCOND `VEuc  1 e 1 @3870 ]
+"20697
+[v _ODCOND ODCOND `VEuc  1 e 1 @3871 ]
+"20759
+[v _WPUD WPUD `VEuc  1 e 1 @3872 ]
+"20821
+[v _ANSELD ANSELD `VEuc  1 e 1 @3873 ]
+"20883
+[v _IOCEF IOCEF `VEuc  1 e 1 @3874 ]
+"20904
+[v _IOCEN IOCEN `VEuc  1 e 1 @3875 ]
+"20925
+[v _IOCEP IOCEP `VEuc  1 e 1 @3876 ]
+"20946
+[v _INLVLE INLVLE `VEuc  1 e 1 @3877 ]
+"20984
+[v _SLRCONE SLRCONE `VEuc  1 e 1 @3878 ]
+"21016
+[v _ODCONE ODCONE `VEuc  1 e 1 @3879 ]
+"21048
+[v _WPUE WPUE `VEuc  1 e 1 @3880 ]
+"21086
+[v _ANSELE ANSELE `VEuc  1 e 1 @3881 ]
+"24332
+[v _ADACT ADACT `VEuc  1 e 1 @3921 ]
+"24384
+[v _ADCLK ADCLK `VEuc  1 e 1 @3922 ]
+"24442
+[v _ADREF ADREF `VEuc  1 e 1 @3923 ]
+"24483
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @3924 ]
+[s S579 . 1 `uc 1 ADDSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 ADGPOL 1 0 :1:5 
+`uc 1 ADIPEN 1 0 :1:6 
+`uc 1 ADPPOL 1 0 :1:7 
+]
+"24497
+[u S585 . 1 `S579 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES585  1 e 1 @3924 ]
+"24522
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @3925 ]
+[s S515 . 1 `uc 1 ADMD 1 0 :3:0 
+`uc 1 ADACLR 1 0 :1:3 
+`uc 1 ADCRS 1 0 :3:4 
+`uc 1 ADPSIS 1 0 :1:7 
+]
+"24544
+[s S520 . 1 `uc 1 ADMD0 1 0 :1:0 
+`uc 1 ADMD1 1 0 :1:1 
+`uc 1 ADMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCRS0 1 0 :1:4 
+`uc 1 ADCRS1 1 0 :1:5 
+`uc 1 ADCRS2 1 0 :1:6 
+]
+[u S528 . 1 `S515 1 . 1 0 `S520 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES528  1 e 1 @3925 ]
+"24599
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @3926 ]
+[s S486 . 1 `uc 1 ADTMD 1 0 :3:0 
+`uc 1 ADSOI 1 0 :1:3 
+`uc 1 ADCALC 1 0 :3:4 
+]
+"24620
+[s S490 . 1 `uc 1 ADTMD0 1 0 :1:0 
+`uc 1 ADTMD1 1 0 :1:1 
+`uc 1 ADTMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCALC0 1 0 :1:4 
+`uc 1 ADCALC1 1 0 :1:5 
+`uc 1 ADCALC2 1 0 :1:6 
+]
+[u S498 . 1 `S486 1 . 1 0 `S490 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES498  1 e 1 @3926 ]
+"24670
+[v _ADACQ ADACQ `VEuc  1 e 1 @3927 ]
+"24740
+[v _ADCAP ADCAP `VEuc  1 e 1 @3928 ]
+"24792
+[v _ADPRE ADPRE `VEuc  1 e 1 @3929 ]
+"24862
+[v _ADPCH ADPCH `VEuc  1 e 1 @3930 ]
+"24920
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @3931 ]
+[s S432 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+"24955
+[s S441 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+]
+[s S445 . 1 `uc 1 DONE 1 0 :1:0 
+]
+[s S447 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S449 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+]
+[s S451 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCAL 1 0 :1:7 
+]
+[u S454 . 1 `S432 1 . 1 0 `S441 1 . 1 0 `S445 1 . 1 0 `S447 1 . 1 0 `S449 1 . 1 0 `S451 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES454  1 e 1 @3931 ]
+"25022
+[v _ADPREVL ADPREVL `VEuc  1 e 1 @3932 ]
+"25092
+[v _ADPREVH ADPREVH `VEuc  1 e 1 @3933 ]
+"25162
+[v _ADRES ADRES `VEus  1 e 2 @3934 ]
+"25169
+[v _ADRESL ADRESL `VEuc  1 e 1 @3934 ]
+"25239
+[v _ADRESH ADRESH `VEuc  1 e 1 @3935 ]
+"25301
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @3936 ]
+[s S547 . 1 `uc 1 ADSTAT 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADMATH 1 0 :1:4 
+`uc 1 ADLTHR 1 0 :1:5 
+`uc 1 ADUTHR 1 0 :1:6 
+`uc 1 ADAOV 1 0 :1:7 
+]
+"25321
+[s S554 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+`uc 1 ADSTAT1 1 0 :1:1 
+`uc 1 ADSTAT2 1 0 :1:2 
+]
+[u S558 . 1 `S547 1 . 1 0 `S554 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES558  1 e 1 @3936 ]
+"25366
+[v _ADRPT ADRPT `VEuc  1 e 1 @3937 ]
+"25436
+[v _ADCNT ADCNT `VEuc  1 e 1 @3938 ]
+"25513
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @3939 ]
+"25583
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @3940 ]
+"25660
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @3941 ]
+"25730
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @3942 ]
+"25807
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @3943 ]
+"25877
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @3944 ]
+"25954
+[v _ADERRL ADERRL `VEuc  1 e 1 @3945 ]
+"26024
+[v _ADERRH ADERRH `VEuc  1 e 1 @3946 ]
+"26101
+[v _ADACCL ADACCL `VEuc  1 e 1 @3947 ]
+"26171
+[v _ADACCH ADACCH `VEuc  1 e 1 @3948 ]
+"26248
+[v _ADFLTRL ADFLTRL `VEuc  1 e 1 @3949 ]
+"26318
+[v _ADFLTRH ADFLTRH `VEuc  1 e 1 @3950 ]
+"27052
+[v _NVMADRL NVMADRL `VEuc  1 e 1 @3961 ]
+"27122
+[v _NVMADRH NVMADRH `VEuc  1 e 1 @3962 ]
+"27192
+[v _NVMADRU NVMADRU `VEuc  1 e 1 @3963 ]
+"27257
+[v _NVMDATL NVMDATL `VEuc  1 e 1 @3964 ]
+"27327
+[v _NVMDATH NVMDATH `VEuc  1 e 1 @3965 ]
+[s S2180 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NVMERR 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 NVMEN 1 0 :1:7 
+]
+"27410
+[u S2185 . 1 `S2180 1 . 1 0 ]
+[v _NVMCON0bits NVMCON0bits `VES2185  1 e 1 @3967 ]
+[s S2160 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 SECRD 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 WR 1 0 :1:4 
+`uc 1 SECWR 1 0 :1:5 
+`uc 1 SECER 1 0 :1:6 
+]
+"27440
+[u S2167 . 1 `S2160 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES2167  1 e 1 @3968 ]
+"27470
+[v _NVMCON2 NVMCON2 `VEuc  1 e 1 @3969 ]
+"27490
+[v _LATA LATA `VEuc  1 e 1 @3970 ]
+[s S25 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"27507
+[u S34 . 1 `S25 1 . 1 0 ]
+[v _LATAbits LATAbits `VES34  1 e 1 @3970 ]
+"27552
+[v _LATB LATB `VEuc  1 e 1 @3971 ]
+"27614
+[v _LATC LATC `VEuc  1 e 1 @3972 ]
+"27676
+[v _LATD LATD `VEuc  1 e 1 @3973 ]
+"27738
+[v _LATE LATE `VEuc  1 e 1 @3974 ]
+"27770
+[v _TRISA TRISA `VEuc  1 e 1 @3975 ]
+"27892
+[v _TRISB TRISB `VEuc  1 e 1 @3976 ]
+"28014
+[v _TRISC TRISC `VEuc  1 e 1 @3977 ]
+"28136
+[v _TRISD TRISD `VEuc  1 e 1 @3978 ]
+"28258
+[v _TRISE TRISE `VEuc  1 e 1 @3979 ]
+[s S2103 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"28399
+[u S2112 . 1 `S2103 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES2112  1 e 1 @3981 ]
+"29639
+[v _RC1REG RC1REG `VEuc  1 e 1 @3992 ]
+"29693
+[v _TX1REG TX1REG `VEuc  1 e 1 @3993 ]
+"29754
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @3994 ]
+"29824
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @3995 ]
+"29878
+[v _RC1STA RC1STA `VEuc  1 e 1 @3996 ]
+[s S1866 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"29904
+[u S1875 . 1 `S1866 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1875  1 e 1 @3996 ]
+"30058
+[v _TX1STA TX1STA `VEuc  1 e 1 @3997 ]
+[s S1887 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"30084
+[u S1896 . 1 `S1887 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1896  1 e 1 @3997 ]
+"30238
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @3998 ]
+[s S1908 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"30272
+[u S1917 . 1 `S1908 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES1917  1 e 1 @3998 ]
+"30790
+[v _PWM3DCL PWM3DCL `VEuc  1 e 1 @4002 ]
+"30856
+[v _PWM3DCH PWM3DCH `VEuc  1 e 1 @4003 ]
+"31026
+[v _PWM3CON PWM3CON `VEuc  1 e 1 @4004 ]
+[s S660 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 P3TSEL 1 0 :2:4 
+`uc 1 P4TSEL 1 0 :2:6 
+]
+"31547
+[s S665 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 P3TSEL0 1 0 :1:4 
+`uc 1 P3TSEL1 1 0 :1:5 
+`uc 1 P4TSEL0 1 0 :1:6 
+`uc 1 P4TSEL1 1 0 :1:7 
+]
+[u S674 . 1 `S660 1 . 1 0 `S665 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES674  1 e 1 @4013 ]
+"32812
+[v _T2TMR T2TMR `VEuc  1 e 1 @4026 ]
+"32817
+[v _TMR2 TMR2 `VEuc  1 e 1 @4026 ]
+"32850
+[v _T2PR T2PR `VEuc  1 e 1 @4027 ]
+"32855
+[v _PR2 PR2 `VEuc  1 e 1 @4027 ]
+"32888
+[v _T2CON T2CON `VEuc  1 e 1 @4028 ]
+[s S1441 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 CKPS 1 0 :3:4 
+`uc 1 ON 1 0 :1:7 
+]
+"32924
+[s S1445 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+`uc 1 T2CKPS 1 0 :3:4 
+`uc 1 T2ON 1 0 :1:7 
+]
+"32924
+[s S1449 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+`uc 1 T2OUTPS1 1 0 :1:1 
+`uc 1 T2OUTPS2 1 0 :1:2 
+`uc 1 T2OUTPS3 1 0 :1:3 
+`uc 1 T2CKPS0 1 0 :1:4 
+`uc 1 T2CKPS1 1 0 :1:5 
+`uc 1 T2CKPS2 1 0 :1:6 
+]
+"32924
+[s S1457 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+`uc 1 CKPS2 1 0 :1:6 
+`uc 1 TMR2ON 1 0 :1:7 
+]
+"32924
+[u S1466 . 1 `S1441 1 . 1 0 `S1445 1 . 1 0 `S1449 1 . 1 0 `S1457 1 . 1 0 ]
+"32924
+"32924
+[v _T2CONbits T2CONbits `VES1466  1 e 1 @4028 ]
+"33034
+[v _T2HLT T2HLT `VEuc  1 e 1 @4029 ]
+[s S1330 . 1 `uc 1 MODE 1 0 :5:0 
+`uc 1 CKSYNC 1 0 :1:5 
+`uc 1 CKPOL 1 0 :1:6 
+`uc 1 PSYNC 1 0 :1:7 
+]
+"33067
+[s S1335 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+`uc 1 MODE4 1 0 :1:4 
+]
+"33067
+[s S1341 . 1 `uc 1 T2MODE 1 0 :5:0 
+`uc 1 T2CKSYNC 1 0 :1:5 
+`uc 1 T2CKPOL 1 0 :1:6 
+`uc 1 T2PSYNC 1 0 :1:7 
+]
+"33067
+[s S1346 . 1 `uc 1 T2MODE0 1 0 :1:0 
+`uc 1 T2MODE1 1 0 :1:1 
+`uc 1 T2MODE2 1 0 :1:2 
+`uc 1 T2MODE3 1 0 :1:3 
+`uc 1 T2MODE4 1 0 :1:4 
+]
+"33067
+[u S1352 . 1 `S1330 1 . 1 0 `S1335 1 . 1 0 `S1341 1 . 1 0 `S1346 1 . 1 0 ]
+"33067
+"33067
+[v _T2HLTbits T2HLTbits `VES1352  1 e 1 @4029 ]
+"33162
+[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @4030 ]
+"33320
+[v _T2RST T2RST `VEuc  1 e 1 @4031 ]
+[s S1403 . 1 `uc 1 RSEL 1 0 :5:0 
+]
+"33347
+[s S1405 . 1 `uc 1 RSEL0 1 0 :1:0 
+`uc 1 RSEL1 1 0 :1:1 
+`uc 1 RSEL2 1 0 :1:2 
+`uc 1 RSEL3 1 0 :1:3 
+`uc 1 RSEL4 1 0 :1:4 
+]
+"33347
+[s S1411 . 1 `uc 1 T2RSEL 1 0 :5:0 
+]
+"33347
+[s S1413 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+`uc 1 T2RSEL1 1 0 :1:1 
+`uc 1 T2RSEL2 1 0 :1:2 
+`uc 1 T2RSEL3 1 0 :1:3 
+`uc 1 T2RSEL4 1 0 :1:4 
+]
+"33347
+[u S1419 . 1 `S1403 1 . 1 0 `S1405 1 . 1 0 `S1411 1 . 1 0 `S1413 1 . 1 0 ]
+"33347
+"33347
+[v _T2RSTbits T2RSTbits `VES1419  1 e 1 @4031 ]
+"35273
+[v _TMR1L TMR1L `VEuc  1 e 1 @4044 ]
+"35443
+[v _TMR1H TMR1H `VEuc  1 e 1 @4045 ]
+"35563
+[v _T1CON T1CON `VEuc  1 e 1 @4046 ]
+[s S1060 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_SYNC 1 0 :1:2 
+]
+"35602
+[s S1063 . 1 `uc 1 ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 nSYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CKPS 1 0 :2:4 
+]
+"35602
+[s S1069 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"35602
+[s S1072 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+"35602
+[s S1079 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+]
+"35602
+[s S1083 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD161 1 0 :1:1 
+]
+"35602
+[u S1086 . 1 `S1060 1 . 1 0 `S1063 1 . 1 0 `S1069 1 . 1 0 `S1072 1 . 1 0 `S1079 1 . 1 0 `S1083 1 . 1 0 ]
+"35602
+"35602
+[v _T1CONbits T1CONbits `VES1086  1 e 1 @4046 ]
+"35677
+[v _T1GCON T1GCON `VEuc  1 e 1 @4047 ]
+[s S1120 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 GGO_NOT_DONE 1 0 :1:3 
+]
+"35719
+[s S1123 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GVAL 1 0 :1:2 
+`uc 1 GGO_nDONE 1 0 :1:3 
+`uc 1 GSPM 1 0 :1:4 
+`uc 1 GTM 1 0 :1:5 
+`uc 1 GPOL 1 0 :1:6 
+`uc 1 GE 1 0 :1:7 
+]
+"35719
+[s S1131 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO_NOT_DONE 1 0 :1:3 
+]
+"35719
+[s S1134 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO_nDONE 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 T1GE 1 0 :1:7 
+]
+"35719
+[s S1142 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 T1GGO 1 0 :1:3 
+]
+"35719
+[u S1145 . 1 `S1120 1 . 1 0 `S1123 1 . 1 0 `S1131 1 . 1 0 `S1134 1 . 1 0 `S1142 1 . 1 0 ]
+"35719
+"35719
+[v _T1GCONbits T1GCONbits `VES1145  1 e 1 @4047 ]
+"35909
+[v _T1GATE T1GATE `VEuc  1 e 1 @4048 ]
+"36051
+[v _T1CLK T1CLK `VEuc  1 e 1 @4049 ]
+"36193
+[v _TMR0L TMR0L `VEuc  1 e 1 @4050 ]
+"36331
+[v _TMR0H TMR0H `VEuc  1 e 1 @4051 ]
+"36585
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @4052 ]
+[s S1608 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T016BIT 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+"36605
+[s S1614 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+`uc 1 T0OUTPS1 1 0 :1:1 
+`uc 1 T0OUTPS2 1 0 :1:2 
+`uc 1 T0OUTPS3 1 0 :1:3 
+]
+"36605
+[u S1619 . 1 `S1608 1 . 1 0 `S1614 1 . 1 0 ]
+"36605
+"36605
+[v _T0CON0bits T0CON0bits `VES1619  1 e 1 @4052 ]
+"36650
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @4053 ]
+[s S251 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"37535
+[s S259 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"37535
+[s S263 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+"37535
+[u S267 . 1 `S251 1 . 1 0 `S259 1 . 1 0 `S263 1 . 1 0 ]
+"37535
+"37535
+[v _INTCONbits INTCONbits `VES267  1 e 1 @4082 ]
+"37637
+[v _TABLAT TABLAT `VEuc  1 e 1 @4085 ]
+"37666
+[v _TBLPTRL TBLPTRL `VEuc  1 e 1 @4086 ]
+"37686
+[v _TBLPTRH TBLPTRH `VEuc  1 e 1 @4087 ]
+"37706
+[v _TBLPTRU TBLPTRU `VEuc  1 e 1 @4088 ]
+"45445
+[v _TMR0IE TMR0IE `VEb  1 e 0 @30189 ]
+"45565
+[v _TMR1IF TMR1IF `VEb  1 e 0 @30280 ]
+"118 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"119
+[v _flags flags `uc  1 s 1 flags ]
+"144
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab02_Blink/Blink.c
+[v _flagCounter flagCounter `uc  1 s 1 flagCounter ]
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab03_Rotate/Rotate.c
+[v _rotateReg rotateReg `uc  1 s 1 rotateReg ]
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab04_AnalogToDigitalConversion/ADC.c
+[v _adcResult adcResult `uc  1 s 1 adcResult ]
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab05_VariableSpeedRotate/VSR.c
+[v _delay delay `uc  1 s 1 delay ]
+"50
+[v _rotateReg@VSR$F162 rotateReg `uc  1 s 1 rotateReg ]
+"55 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab06_PulseWidthModulation/PWM.c
+[v _adcResult@PWM$F208 adcResult `us  1 s 2 adcResult ]
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab07_Timers/Timers.c
+[v _rotateReg@Timers$F236 rotateReg `uc  1 s 1 rotateReg ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab08_Interrupts/Interrupt.c
+[v _rotateReg@Interrupt$F303 rotateReg `uc  1 s 1 rotateReg ]
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab10_EEPROM/EEPROM.c
+[v _adcResult@EEPROM$F389 adcResult `uc  1 s 1 adcResult ]
+"55
+[v _ledDisplay ledDisplay `uc  1 s 1 ledDisplay ]
+"40 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/nvm/src/nvm.c
+[v _unlockKeyLow unlockKeyLow `VNEuc  1 s 1 unlockKeyLow ]
+"41
+[v _unlockKeyHigh unlockKeyHigh `VNEuc  1 s 1 unlockKeyHigh ]
+"38 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/interrupt.c
+[v _INT0_InterruptHandler INT0_InterruptHandler `*.38(v  1 e 3 0 ]
+"39
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.38(v  1 e 3 0 ]
+"40
+[v _INT2_InterruptHandler INT2_InterruptHandler `*.38(v  1 e 3 0 ]
+"46 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_OverflowCallback TMR0_OverflowCallback `*.38(v  1 s 3 TMR0_OverflowCallback ]
+"43 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"54
+[v _TMR1_OverflowCallback TMR1_OverflowCallback `*.38(v  1 s 3 TMR1_OverflowCallback ]
+"56
+[v _TMR1_GateCallback TMR1_GateCallback `*.38(v  1 s 3 TMR1_GateCallback ]
+"50 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[v _TMR2_OverflowCallback TMR2_OverflowCallback `*.38(v  1 s 3 TMR2_OverflowCallback ]
+[s S1843 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"77 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/uart/src/eusart1.c
+[u S1848 . 2 `S1843 1 . 1 0 `ui 1 status 2 0 ]
+[v _eusart1RxLastError eusart1RxLastError `VES1848  1 e 2 0 ]
+"83
+[v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.38(v  1 e 3 0 ]
+"84
+[v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.38(v  1 e 3 0 ]
+"42 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"94
+} 0
+"108
+[v _nextLab nextLab `(v  1 e 1 0 ]
+{
+"115
+} 0
+"96
+[v _checkButtonS1 checkButtonS1 `(v  1 e 1 0 ]
+{
+"106
+} 0
+"55 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab05_VariableSpeedRotate/VSR.c
+[v _VSR VSR `(v  1 e 1 0 ]
+{
+"92
+} 0
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab07_Timers/Timers.c
+[v _Timers Timers `(v  1 e 1 0 ]
+{
+"87
+} 0
+"55 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab09_SleepWakeup/SleepWakeUp.c
+[v _SleepWakeUp SleepWakeUp `(v  1 e 1 0 ]
+{
+"80
+} 0
+"36 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"48
+} 0
+"57 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"78
+} 0
+"122
+[v _TMR2_OverflowCallbackRegister TMR2_OverflowCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR2_OverflowCallbackRegister@InterruptHandler InterruptHandler `*.38(v  1 p 3 2 ]
+"124
+} 0
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"158
+[v _TMR1_OverflowCallbackRegister TMR1_OverflowCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR1_OverflowCallbackRegister@CallbackHandler CallbackHandler `*.38(v  1 p 3 2 ]
+"161
+} 0
+"184
+[v _TMR1_GateCallbackRegister TMR1_GateCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR1_GateCallbackRegister@CallbackHandler CallbackHandler `*.38(v  1 p 3 2 ]
+"187
+} 0
+"49 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"72
+} 0
+"45 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/pwm/src/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+{
+"60
+} 0
+"38 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"131
+} 0
+"43 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/nvm/src/nvm.c
+[v _NVM_Initialize NVM_Initialize `(v  1 e 1 0 ]
+{
+"46
+} 0
+"65
+[v _NVM_StatusClear NVM_StatusClear `(v  1 e 1 0 ]
+{
+"68
+} 0
+"42 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"174
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 2 ]
+"176
+} 0
+"148
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 2 ]
+"150
+} 0
+"122
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 2 ]
+"124
+} 0
+"94 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/uart/src/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"113
+} 0
+"260
+[v _EUSART1_OverrunErrorCallbackRegister EUSART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART1_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 2 ]
+"266
+} 0
+"252
+[v _EUSART1_FramingErrorCallbackRegister EUSART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v EUSART1_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 2 ]
+"258
+} 0
+"37 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+{
+"51
+} 0
+"45 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/adc/src/adcc.c
+[v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab03_Rotate/Rotate.c
+[v _Rotate Rotate `(v  1 e 1 0 ]
+{
+"83
+} 0
+"60 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab06_PulseWidthModulation/PWM.c
+[v _PWM PWM `(v  1 e 1 0 ]
+{
+"81
+} 0
+"98 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[v _TMR2_Stop TMR2_Stop `(v  1 e 1 0 ]
+{
+"102
+} 0
+"92
+[v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
+{
+"96
+} 0
+"83 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab06_PulseWidthModulation/PWM.c
+[v _PWM_Output_D5_Enable PWM_Output_D5_Enable `(v  1 e 1 0 ]
+{
+"92
+} 0
+"94
+[v _PWM_Output_D5_Disable PWM_Output_D5_Disable `(v  1 e 1 0 ]
+{
+"104
+} 0
+"62 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/pwm/src/pwm3.c
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 2 ]
+"69
+} 0
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab08_Interrupts/Interrupt.c
+[v _Interrupt Interrupt `(v  1 e 1 0 ]
+{
+"85
+} 0
+"116 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_OverflowCallbackRegister TMR0_OverflowCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR0_OverflowCallbackRegister@CallbackHandler CallbackHandler `*.38(v  1 p 3 2 ]
+"119
+} 0
+"50 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab01_HelloWorld/HelloWorld.c
+[v _HelloWorld HelloWorld `(v  1 e 1 0 ]
+{
+"64
+} 0
+"60 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab10_EEPROM/EEPROM.c
+[v _EEPROM EEPROM `(v  1 e 1 0 ]
+{
+"84
+} 0
+"70 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/nvm/src/nvm.c
+[v _NVM_UnlockKeySet NVM_UnlockKeySet `(v  1 e 1 0 ]
+{
+[v NVM_UnlockKeySet@unlockKey unlockKey `us  1 p 2 2 ]
+"74
+} 0
+"336
+[v _EEPROM_Write EEPROM_Write `(v  1 e 1 0 ]
+{
+"339
+[v EEPROM_Write@globalInterruptBitValue globalInterruptBitValue `uc  1 a 1 9 ]
+"336
+[v EEPROM_Write@address address `um  1 p 3 2 ]
+[v EEPROM_Write@data data `uc  1 p 1 5 ]
+"372
+} 0
+"317
+[v _EEPROM_Read EEPROM_Read `(uc  1 e 1 0 ]
+{
+[v EEPROM_Read@address address `um  1 p 3 2 ]
+"334
+} 0
+"59 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab02_Blink/Blink.c
+[v _Blink Blink `(v  1 e 1 0 ]
+{
+"83
+} 0
+"95 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr1.c
+[v _TMR1_Stop TMR1_Stop `(v  1 e 1 0 ]
+{
+"99
+} 0
+"89
+[v _TMR1_Start TMR1_Start `(v  1 e 1 0 ]
+{
+"93
+} 0
+"137
+[v _TMR1_Reload TMR1_Reload `(v  1 e 1 0 ]
+{
+"140
+} 0
+"115
+[v _TMR1_Write TMR1_Write `(v  1 e 1 0 ]
+{
+[v TMR1_Write@timerVal timerVal `ui  1 p 2 2 ]
+"135
+} 0
+"169
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+{
+"172
+} 0
+"54 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab04_AnalogToDigitalConversion/ADC.c
+[v _ADC ADC `(v  1 e 1 0 ]
+{
+"76
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.39v  1 a 2 68 ]
+"5
+[v printf@fmt fmt `*.32Cuc  1 p 2 64 ]
+"13
+} 0
+"1546 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1549
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 62 ]
+[s S2738 _IO_FILE 0 ]
+"1546
+[v vfprintf@fp fp `*.2S2738  1 p 2 56 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 58 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 60 ]
+"1569
+} 0
+"1048
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S2756 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+"1059
+[v vfpfcnvrt@convarg convarg `S2756  1 a 4 50 ]
+"1050
+[v vfpfcnvrt@cp cp `*.32uc  1 a 2 54 ]
+[s S2738 _IO_FILE 0 ]
+"1048
+[v vfpfcnvrt@fp fp `*.2S2738  1 p 2 42 ]
+[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 44 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 46 ]
+"1543
+} 0
+"470
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+{
+"473
+[v dtoa@i i `i  1 a 2 39 ]
+[v dtoa@w w `i  1 a 2 37 ]
+[v dtoa@p p `i  1 a 2 35 ]
+"472
+[v dtoa@s s `uc  1 a 1 41 ]
+[s S2738 _IO_FILE 0 ]
+"470
+[v dtoa@fp fp `*.2S2738  1 p 2 29 ]
+[v dtoa@d d `i  1 p 2 31 ]
+"527
+} 0
+"152
+[v _pad pad `(v  1 s 1 pad ]
+{
+"154
+[v pad@w w `i  1 a 2 27 ]
+[v pad@i i `i  1 a 2 25 ]
+[s S2738 _IO_FILE 0 ]
+"152
+[v pad@fp fp `*.2S2738  1 p 2 18 ]
+[v pad@buf buf `*.39uc  1 p 2 20 ]
+[v pad@p p `i  1 p 2 22 ]
+"183
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 16 ]
+"10
+[v fputs@c c `uc  1 a 1 15 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 11 ]
+[u S2717 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2720 _IO_FILE 12 `S2717 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputs@fp fp `*.2S2720  1 p 2 13 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 2 ]
+[u S2717 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S2720 _IO_FILE 12 `S2717 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.2S2720  1 p 2 4 ]
+"24
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 8 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 7 ]
+[v ___awmod@counter counter `uc  1 a 1 6 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+[v ___awmod@divisor divisor `i  1 p 2 4 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 8 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 7 ]
+[v ___awdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+[v ___awdiv@divisor divisor `i  1 p 2 4 ]
+"41
+} 0
+"118 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/adc/src/adcc.c
+[v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
+{
+[v ADCC_GetSingleConversion@channel channel `E12689  1 a 1 wreg ]
+[v ADCC_GetSingleConversion@channel channel `E12689  1 a 1 wreg ]
+"121
+[v ADCC_GetSingleConversion@channel channel `E12689  1 a 1 6 ]
+"141
+} 0
+"80 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"102
+} 0
+"106 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_OverflowISR TMR0_OverflowISR `(v  1 e 1 0 ]
+{
+"114
+} 0
+"121
+[v _TMR0_DefaultOverflowCallback TMR0_DefaultOverflowCallback `(v  1 s 1 TMR0_DefaultOverflowCallback ]
+{
+"125
+} 0
+"163 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr1.c
+[v _TMR1_DefaultOverflowCallback TMR1_DefaultOverflowCallback `(v  1 s 1 TMR1_DefaultOverflowCallback ]
+{
+"167
+} 0
+"87 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\Labs/Lab08_Interrupts/Interrupt.c
+[v _LAB_ISR LAB_ISR `(v  1 e 1 0 ]
+{
+"97
+} 0
+"126 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/timer/src/tmr2.c
+[v _TMR2_DefaultOverflowCallback TMR2_DefaultOverflowCallback `(v  1 s 1 TMR2_DefaultOverflowCallback ]
+{
+"129
+} 0
+"133 C:\Q10 example update\pic18f47q10-curiosity-hpc-demo-code\pic18f47q10-curiosity-hpc-demo-code.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"135
+} 0

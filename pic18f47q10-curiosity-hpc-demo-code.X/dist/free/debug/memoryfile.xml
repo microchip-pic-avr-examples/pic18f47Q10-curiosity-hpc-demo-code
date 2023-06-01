@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/free/debug\pic18f47q10-curiosity-hpc-demo-code.X.debug.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131072</length>
+      <used>4858</used>
+      <free>126214</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3359</length>
+      <used>164</used>
+      <free>3195</free>
+    </memory>
+  </executable>
+</project>
