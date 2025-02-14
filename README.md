@@ -6,7 +6,7 @@
 The following labs in this demo code project are designed for Microchip’s Curiosity High Pin Count (HPC) Development board. This development board supports Microchip's 28 and 40-pin 8-bit PIC® MCUs. This MPLAB X project contains several lab exercises that demonstrate a large number of basic capabilities of PIC® devices and can also be used to test the condition of the board. Each lab contains a brief description of the lab and discussions to make you become easily acquainted with the different peripherals and registers of PIC® MCUs. These labs also make use of the MPLAB Code Configurator (MCC), an easy-to-use plugin tool for MPLAB X IDE. MCC can be used to setup the peripherals and also generates drivers which can be used in the application code. All labs are written in C language and are compatible with the latest XC8 compilers.
 
 ##### Curiosity High Pin Count (HPC) Development Board:
-![Curiosity High Pin Count (HPC) Development Board](images/HPC-board.PNG)
+<br><img src="images/HPC-board.PNG">
 
 ## Software Used
   - [MPLAB® X IDE 6.20 or newer](http://www.microchip.com/mplab/mplab-x-ide)
@@ -72,12 +72,12 @@ In C, we use Binary Left Shift and Right Shift Operators (<< and >>, respectivel
 For example, for a certain register rotateReg, use the Binary Left Shift Operator (<<) to push a '`1`' into the Least Significant Bit (LSb) of the register and have the rest of the bits shift to the left. First set up the Carry bit with the value to be pushed into the register before executing the shift, as seen in the figure below. 
 
 ###### Left Shift Binary Operation
-<br><img src="images/lab3-left-shift-binary-operation.PNG">
+<br><img src="images/Lab3-left-shift-binary-operation.PNG">
 
 Similarly, use the Binary Right Shift Operator (>>) to push a '`1`' into the Most Significant Bit (MSb) of the register and have the rest of the bits shift to the right. First set up the Carry bit with the value to be pushed into the register before executing the shift, as seen in the figure below.
 
 ###### Right Shift Binary Operation
-<br><img src="images/lab3-right-shift-binary-operation.PNG">
+<br><img src="images/Lab3-right-shift-binary-operation.PNG">
 
 
 ### <u>Lab 4: Analog-to-Digital Conversion (ADC)</u>
@@ -104,7 +104,7 @@ The ADC value will be printed on the UART TX pin which is connected to pin RC6 t
 A crucial step in this lab is to check if the ADC value is zero. If it does not perform the zero check, and the ADC result is zero, the LEDs will rotate at an incorrect speed. This is an effect of the delay value underflowing from 0 to 255.
 
 ###### Program Flow
-<br><img src="images/lab5-program-flow.PNG">
+<br><img src="images/Lab5-program-flow.PNG">
 
 ### <u>Lab 6: Pulse-Width Modulation (PWM)</u>
 #### Introduction
@@ -170,7 +170,7 @@ The ADC is used to continously sample the potentiometer, and the upper MSbs of t
 This lab stores an ADC value every time switch 2 is pressed, effectively keeping a log of all ADC values. 
 
 ###### Program Flow
-<br><img src="images/lab10-program-flow.PNG">
+<br><img src="images/Lab10-program-flow.PNG">
 
 ## Summary
 
