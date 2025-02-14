@@ -7,11 +7,11 @@
   *
   * @brief This file contains the API implementations for the PWM3 module.
   *
-  * @version PWM3 Driver Version 2.0.3
+  * @version PWM3 Driver Version 2.0.4
 */
 
  /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -44,18 +44,19 @@
 
  void PWM3_Initialize(void)
  {
-    // Set the PWM to the options selected in the .
-    // CTSEL PWM3timer2; 
-    CCPTMRSbits.P3TSEL = 0x1;
-
+    // Set the PWM3 to the options selected in the User Interface
+    
     // PWMPOL active_hi; PWMEN enabled; 
     PWM3CON = 0x80;
-
+    
     // PWMDCH 204; 
     PWM3DCH = 0xCC;
 
     // PWMDCL 2; 
     PWM3DCL = 0x80;
+    
+
+    CCPTMRSbits.P3TSEL = 0x3;
 
  }
 

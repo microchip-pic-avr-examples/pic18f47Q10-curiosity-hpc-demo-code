@@ -3,14 +3,16 @@
  * 
  * @file tmr0.c
  * 
- * @ingroup tmr0
+ * @ingroup tmr08bit
  * 
  * @brief  Driver implementation for the TMR0 driver
  *
- * @version TMR0 Driver Version 2.1.1
+ * @version TMR0 Driver Version 3.0.0
+ *
+ * @version Package Version 5.0.0
 */
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -33,42 +35,43 @@
 #include <xc.h>
 #include "../tmr0.h"
 
+static void (*TMR0_PeriodMatchCallback)(void);
+static void TMR0_DefaultCallback(void);
 
-const struct TMR_INTERFACE tmr0 = {
-    .Initialize = TMR0_Initialize,
-    .Start = TMR0_Start,
-    .Stop = TMR0_Stop,
-    .PeriodCountSet = TMR0_Reload,
-    .TimeoutCallbackRegister = TMR0_OverflowCallbackRegister,
-    .Tasks = NULL
-};
-
-static void (*TMR0_OverflowCallback)(void);
-static void TMR0_DefaultOverflowCallback(void);
+/**
+  Section: TMR0 APIs
+*/ 
 
 void TMR0_Initialize(void)
 {
-    //TMR0H 243; 
-    TMR0H = 0xF3;
-
-    //TMR0L 0; 
+    TMR0H = 0xF3;                    // Period 499.712ms; Frequency 488 Hz; Count 243
     TMR0L = 0x0;
+    
+    T0CON1 = (2 << _T0CON1_T0CS_POSN)   // T0CS FOSC/4
+        | (8 << _T0CON1_T0CKPS_POSN)   // T0CKPS 1:256
+        | (1 << _T0CON1_T0ASYNC_POSN);  // T0ASYNC not_synchronised
+    
+    TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
 
-    //T0CS FOSC/4; T0CKPS 1:256; T0ASYNC synchronised; 
-    T0CON1 = 0x48;
+    PIR0bits.TMR0IF = 0;	   
+    PIE0bits.TMR0IE = 1;	
 
+    T0CON0 = (0 << _T0CON0_T0OUTPS_POSN)   // T0OUTPS 1:1
+        | (1 << _T0CON0_T0EN_POSN)   // T0EN enabled
+        | (0 << _T0CON0_T016BIT_POSN);  // T016BIT 8-bit
+}
 
-    //Set default callback for TMR0 overflow interrupt
-    TMR0_OverflowCallbackRegister(TMR0_DefaultOverflowCallback);
-
-    //Clear Interrupt flag before enabling the interrupt
-    PIR0bits.TMR0IF = 0;
-	
-    //Enable TMR0 interrupt.
-    PIE0bits.TMR0IE = 1;
-	
-    //T0OUTPS 1:1; T0EN enabled; T016BIT 8-bit; 
-    T0CON0 = 0x80;
+void TMR0_Deinitialize(void)
+{
+    T0CON0bits.T0EN = 0;
+    
+    PIR0bits.TMR0IF = 0;	   
+    PIE0bits.TMR0IE = 0;		
+    
+    T0CON0 = 0x0;
+    T0CON1 = 0x0;
+    TMR0H = 0xFF;
+    TMR0L =0x0;
 }
 
 void TMR0_Start(void)
@@ -81,46 +84,60 @@ void TMR0_Stop(void)
     T0CON0bits.T0EN = 0;
 }
 
-uint8_t TMR0_Read(void)
+uint8_t TMR0_CounterGet(void)
 {
-    uint8_t readVal;
+    uint8_t counterValue;
 
-    //Read TMR0 register, low byte only
-    readVal = TMR0L;
+    counterValue = TMR0L;
 
-    return readVal;
+    return counterValue;
 }
 
-void TMR0_Write(uint8_t timerVal)
+void TMR0_CounterSet(uint8_t counterValue)
 {
-    //Write to TMR0 register, low byte only
-    TMR0L = timerVal;
+    TMR0L = counterValue;
  }
 
-void TMR0_Reload(size_t periodVal)
+void TMR0_PeriodSet(uint8_t periodValue)
 {
-   //Write to TMR0 register, high byte only
-   TMR0H = (uint8_t)periodVal;
+   TMR0H = periodValue;
 }
 
-void TMR0_OverflowISR(void)
+uint8_t TMR0_PeriodGet(void)
 {
-    //Clear the TMR0 interrupt flag
-    PIR0bits.TMR0IF = 0;
-    if(TMR0_OverflowCallback)
+    return TMR0H;
+}
+
+uint8_t TMR0_MaxCountGet(void)
+{
+    return TMR0_MAX_COUNT;
+}
+
+void TMR0_TMRInterruptEnable(void)
+{
+    PIE0bits.TMR0IE = 1;
+}
+
+void TMR0_TMRInterruptDisable(void)
+{
+    PIE0bits.TMR0IE = 0;
+}
+
+void TMR0_ISR(void)
+{
+    if(NULL != TMR0_PeriodMatchCallback)
     {
-        TMR0_OverflowCallback();
+        TMR0_PeriodMatchCallback();
     }
+    PIR0bits.TMR0IF = 0;
 }
 
-void TMR0_OverflowCallbackRegister(void (* CallbackHandler)(void))
+void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
 {
-    TMR0_OverflowCallback = CallbackHandler;
+    TMR0_PeriodMatchCallback = callbackHandler;
 }
 
-static void TMR0_DefaultOverflowCallback(void)
+static void TMR0_DefaultCallback(void)
 {
-    //Add your interrupt code here or
-    //Use TMR0_OverflowCallbackRegister function to use Custom ISR
+    // Default callback
 }
-

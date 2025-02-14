@@ -5,12 +5,12 @@
  * 
  * @defgroup uart_types UART_TYPES
  * 
- * @brief This file contains APIs for UART module.
+ * @brief This file contains the enumeration of different Universal Asynchronous Receiver and Transmitter (UART) baud rates.
  *
- * @version UART Driver Version 3.0.0
+ * @version UART Driver Version 3.0.2
 */
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -51,8 +51,8 @@ extern "C" {
 /**
 @ingroup uartdriver
 @enum UART_STANDARD_BAUDS
-@brief This Enum can be used to set UART standard
-baud-rates using \ref UARTx_BRGSet function e.g. \ref UART1_BRGSet.
+@brief This Enum can be used to set the UART standard
+baud rates using \ref UARTx_BRGSet function e.g. \ref UART1_BRGSet.
 */
 enum UART_STANDARD_BAUDS{
 UART_110 = 0,

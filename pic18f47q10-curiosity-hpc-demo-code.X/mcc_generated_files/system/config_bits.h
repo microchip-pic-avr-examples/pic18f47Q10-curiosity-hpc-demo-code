@@ -1,17 +1,19 @@
 /**
- * CONFIGURATION BITS Generated Driver Header File
+ * Configuration Bits Generated Driver Header File
  * 
  * @file config_bits.h
  * 
  * @defgroup config_bitsdriver CONFIGBITS Driver 
  * 
- * @brief This is the generated header file for the Configuration bits driver.
+ * @brief This file contains the API prototype for the Configuration Bits driver.
  *
- * @version Driver Version 2.0.1
+ * @version Driver Version 2.0.2
+ *
+ * @version Package Version 2.1.5
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 

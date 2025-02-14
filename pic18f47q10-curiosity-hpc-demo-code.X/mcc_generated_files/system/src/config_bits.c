@@ -1,26 +1,19 @@
 /**
-  @Generated CCL Source File
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    config_bits.c
-
-  @Summary:
-    This is the config_bits.c file generated using CCL
-
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
-    Generation Information : 
-        Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 v2.20
-        MPLAB             :  MPLAB X 5.40
+ * Configuration Bits Generated Driver Source File
+ * 
+ * @file config_bits.c
+ * 
+ * @ingroup config_bitsdriver
+ * 
+ * @brief This file contains the API Implementation for the Device Configuration Bits driver.
+ *
+ * @version Driver Version 2.0.2
+ *
+ * @version Package Version 2.1.5
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 

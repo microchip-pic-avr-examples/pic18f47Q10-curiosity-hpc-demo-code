@@ -7,10 +7,12 @@
  * 
  * @brief This file contains the API implementation for the System driver.
  *
- * @version Driver Version 2.0.2
+ * @version Driver Version 2.0.3
+ *
+ * @version Package Version 2.1.5
 */
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -37,13 +39,17 @@ void SYSTEM_Initialize(void)
 {
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
-    ADCC_Initialize();
-    EUSART1_Initialize();
-    NVM_Initialize();
-    PWM3_Initialize();
+    ADC_Initialize();
     TMR0_Initialize();
     TMR1_Initialize();
     TMR2_Initialize();
+    TMR4_Initialize();
+    TMR6_Initialize();
+    CLC1_Initialize();
+    CLC2_Initialize();
+    EUSART1_Initialize();
+    NVM_Initialize();
+    PWM3_Initialize();
     INTERRUPT_Initialize();
 }
 

@@ -7,11 +7,13 @@
  * 
  * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version MAIN Driver Version 1.0.2
+ *
+ * @version Package Version: 3.1.2
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -94,14 +96,9 @@ void main(void) {
 }
 
 void checkButtonS1(void) {
-    if (btnState == NOT_PRESSED) {
-        if (SWITCH_S1_PORT == LOW) {
-            __delay_ms(100);
-            btnState = PRESSED;
-        }
-    } else if (SWITCH_S1_PORT == HIGH) {
-        btnState = NOT_PRESSED;
+    if( CLC1IF ) {
         switchEvent = 1;
+        CLC1IF = 0;        
     }
 }
 
@@ -113,6 +110,7 @@ void nextLab(void) {
         labNumber = 1;
     }
 }
+
 /**
  End of File
  */

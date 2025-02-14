@@ -7,11 +7,11 @@
  *
  * @brief This file contains the API prototypes for the PWM3 driver.
  *
- * @version PWM3 Driver Version 2.0.3
+ * @version PWM3 Driver Version 2.0.4
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 

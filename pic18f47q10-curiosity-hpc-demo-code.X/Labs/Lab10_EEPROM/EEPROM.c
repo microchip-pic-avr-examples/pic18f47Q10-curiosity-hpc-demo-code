@@ -15,71 +15,90 @@
  */
 
 /*
-    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
+    © [2025] Microchip Technology Inc. and its subsidiaries.
 
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
+    Subject to your compliance with these terms, you may use Microchip 
+    software and any derivatives exclusively with Microchip products. 
+    You are responsible for complying with 3rd party license terms  
+    applicable to your use of 3rd party software (including open source  
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
+    THIS SOFTWARE.
 */
 
 /**
   Section: Included Files
  */
-
 #include "../../mcc_generated_files/system/system.h"
 #include "../../labs.h"
 
-/**
-  Section: Macro Declaration
- */
-#define EEAddr    0x310000      // EEPROM starting address
+#define EEPROM_LAST_ADDR     ((eeprom_address_t)(EEPROM_START_ADDRESS + EEPROM_SIZE - 1))       // address of the last location in EEPROM
 
-/**
-  Section: Local Variable Declarations
- */
 static uint8_t adcResult;
-static uint8_t ledDisplay;
+static eeprom_address_t currentAddress = EEPROM_START_ADDRESS;
 
-/*
-                             Application    
- */
+void dumpMemoryContents(void);
+
 void EEPROM(void) {
 
     if (labState == NOT_RUNNING) {
         LEDs_SetLow();
-
         labState = RUNNING;
     }
 
-    if (labState == RUNNING) {
-        //Get the top 4 MSBs of the ADC and write them to EEPROM
-        adcResult = ADCC_GetSingleConversion(POT_CHANNEL) >> 12;
-        NVM_UnlockKeySet(UNLOCK_KEY_WORD_BYTE_WRITE);
-        EEPROM_Write(EEAddr, adcResult);
-
-        //Load whatever is in EEPROM to the LED Display
-        ledDisplay = EEPROM_Read(EEAddr);
-
-        //Determine which LEDs will light up
-        LEDs = ledDisplay << 4;
+    if (labState == RUNNING) {   
+        
+        adcResult = (uint8_t)(ADC_ChannelSelectAndConvert(POT_CHANNEL) >> 8);   // Get the top 8 MSBs of the ADC Conversion
+        LEDs = (uint8_t)(adcResult);                                            // write adcResult to LEDs
+        
+        if( CLC2IF ) {                                                          // determine if switch 2 has been pressed            
+            
+            NVM_UnlockKeySet(0xAA55);                                           // set the unlock key to allow NVM writes
+            EEPROM_Write(currentAddress, adcResult);
+            while( NVM_IsBusy() ) {
+                // wait for EEPROM write to finish
+            }
+            NVM_UnlockKeyClear();                                               // Clear the unlock key to safeguard against unintended NVM writes            
+            
+            currentAddress++;
+            if( currentAddress > EEPROM_LAST_ADDR) {
+                currentAddress = EEPROM_START_ADDRESS;
+            }
+            
+            dumpMemoryContents();
+            CLC2IF = 0;
+        }                                           
     }
 
     if (switchEvent) {
         labState = NOT_RUNNING;
+    }
+}
+
+void dumpMemoryContents(void) {
+    
+    eeprom_address_t address = EEPROM_START_ADDRESS;
+    
+    printf("\r\n");
+    while( address <= EEPROM_LAST_ADDR) {
+        
+        uint8_t addrUpper = ( (address>>16) & 0xff);
+        uint8_t addrHigh =  ( (address>>8) & 0xff);
+        uint8_t addrLow =   (  address & 0xff);
+        
+        printf("\r\n0x%02x%02x%02x: ",addrUpper,addrHigh,addrLow);
+        for( uint8_t i=0; i<=0xf; i++) {
+            printf("%2x ", EEPROM_Read(address++));
+        }
     }
 }
 /*

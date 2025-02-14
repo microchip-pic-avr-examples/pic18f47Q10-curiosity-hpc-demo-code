@@ -8,11 +8,11 @@
  * @brief This is generated driver implementation for pins. 
  *        This file provides implementations for pin APIs for all pins selected in the GUI.
  *
- * @version Driver Version 3.1.0
+ * @version Driver Version 3.1.1
 */
 
 /*
-© [2023] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -45,11 +45,19 @@ void PIN_MANAGER_Initialize(void)
     LATC = 0x0;
     LATD = 0x0;
     LATE = 0x0;
+    /**
+    ODx registers
+    */
+    ODCONA = 0x0;
+    ODCONB = 0x0;
+    ODCONC = 0x0;
+    ODCOND = 0x0;
+    ODCONE = 0x0;
 
     /**
     TRISx registers
     */
-    TRISA = 0x0F;
+    TRISA = 0xF;
     TRISB = 0xFF;
     TRISC = 0xBF;
     TRISD = 0xFF;
@@ -73,18 +81,6 @@ void PIN_MANAGER_Initialize(void)
     WPUD = 0x0;
     WPUE = 0x0;
 
-    /**
-    RxyI2C registers
-    */
-
-    /**
-    ODx registers
-    */
-    ODCONA = 0x0;
-    ODCONB = 0x0;
-    ODCONC = 0x0;
-    ODCOND = 0x0;
-    ODCONE = 0x0;
 
     /**
     SLRCONx registers
@@ -103,10 +99,17 @@ void PIN_MANAGER_Initialize(void)
     INLVLC = 0xFF;
     INLVLD = 0xFF;
     INLVLE = 0xF;
+
+   /**
+    RxyI2C | RxyFEAT registers   
+    */
     /**
     PPS registers
     */
-    RX1PPS = 0x15; //RC5->EUSART1:RX1;
+    T4INPPS = 0xC; //RB4->TMR4:T4IN;
+    CLCIN2PPS = 0xC; //RB4->CLC1:CLCIN2;
+    T2INPPS = 0x15; //RC5->TMR2:T2IN;
+    CLCIN0PPS = 0x15; //RC5->CLC2:CLCIN0;
     RC6PPS = 0x09;  //RC6->EUSART1:TX1;
 
    /**
