@@ -4,27 +4,27 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f47q10-curiosity-hpc-demo-code",
-        "version": "2.0.1",
+        "version": "3.0.0",
         "displayName": "PIC18F47Q10 High-Pin-Count Curiosity Board Demo Code",
         "projectName": "pic18f47q10-curiosity-hpc-demo-code",
         "shortDescription": "Demo code for HPC board for PIC18-Q10 devices",
         "ide": {
             "name": "MPLAB X",
-            "semverRange": ">=6.10.0"
+            "semverRange": "^6.20.0"
         },
         "compiler": [
 			{
 				"name": "XC8",
-				"semverRange": "^2.41.0"
+				"semverRange": "^3.0.0"
 			}
 		],
         "dfp": {
             "name": "PIC18F-Q_DFP",
-            "semverRange": "^1.18.389"
+            "semverRange": "^1.26.442"
         },
         "configurator": {
             "name": "MCC",
-            "semverRange": ">=5.3.2"
+            "semverRange": ">=5.7.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -38,18 +38,31 @@
         },
         "author": "Microchip",
         "peripherals": [
-            "ADCC",
-            "UART",
-            "WWDT",
-	    "TMR0",
+            "GPIO", 
+            "PWM",
+            "TMR0",
             "TMR1",
-	    "TMR2",
-            "PWM"
+            "TMR2",
+            "ADC",
+            "NVMCTRL",
+            "UART",
+            "CLC"
         ],
         "keywords": [
-            "Getting Started",
+            "Melody",
+            "MCC Melody",
+            "XC8",
             "Curiosity",
-            "Melody"		
+            "GPIO",
+            "PWM",
+            "TMR0",		
+            "TMR1",
+            "TMR2",
+            "ADC",
+            "NVM Controller",
+            "UART",
+            "CLC",
+            "Periodic Interrupts"
         ],
         "additionalData": {
             "longDescription": {
