@@ -1,11 +1,12 @@
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
+# Curiosity HPC Labs Using PIC18F47Q10
 
-# INTRODUCTION
+## Introduction
 
-The following labs in this demo code project are designed for Microchip’s Curiosity High Pin Count (HPC) Development board. This development board supports Microchip's 28 and 40-pin 8-bit PIC® MCUs. This MPLAB X project contains several lab exercises that demonstrate a large number of basic capabilities of PIC® devices and can also be used to test the condition of the board. Each lab contains a brief description of the lab and discussions to make you become easily acquainted with the different peripherals and registers of PIC® MCUs. These labs also make use of the MPLAB Code Configurator (MCC), an easy-to-use plugin tool for MPLAB X IDE. MCC can be used to setup the peripherals and also generates drivers which can be used in the application code. All labs are written in C language and are compatible with the latest XC8 compilers.
+The following demo project contains labs designed for Microchip’s Curiosity High Pin Count (HPC) Development board, which supports 28 and 40-pin 8-bit PIC® microcontrollers (MCUs). Each lab includes a brief description of its purpose and offers exercises that demonstrate basic PIC device capabilities, as well as peripherals and registers. These can also be used to test the condition of the board. MPLAB® Code Configurator (MCC) was used for developing these examples. MCC is an easy-to-use plug-in tool for MPLAB X IDE which can be used to configure the peripherals and generate drivers to use in the application code. All labs are written in C language and are compatible with the latest XC8 compilers.
 
-##### Curiosity High Pin Count (HPC) Development Board:
+##### Curiosity High Pin Count (HPC) Development Board
 <br><img src="images/HPC-board.PNG">
 
 ## Software Used
@@ -33,7 +34,7 @@ The lab descriptions in this file are presented in the same order as they appear
 - Lab 10: EEPROM <br />
 
 ## Inputs and Display
-- Push Button Switch S1 is connected to the PIC MCUs RB4 pin and used to switch to the next lab. Each switch is debounced using a Configurable Logic Cell (CLC) and Timer resource. <br />
+- Switch S1 is connected to the PIC MCUs RB4 pin and used to switch to the next lab. Each switch is debounced using a Configurable Logic Cell (CLC) and Timer resource. <br />
 - A 10k potentiometer is connected to the RA0 pin and used as an analog input <br />
 - The Curiosity HPC Development board has four LEDs (D2 through D5) that are connected to I/O ports RA4 through RA7, respectively. These LEDs are used to display the output of the different labs. <br/>
 
@@ -45,7 +46,7 @@ This lab shows how to turn on an LED.
 LED D2 lights up and stays lit.
 
 #### Summary
-The LEDs are connected to the Input/Output (I/O) pins. First, the I/O pin must be configured as output. In this case, when one of these pins is driven high (LED_D2 = 1), the LED will turn on. These two logic levels are derived from the power pins of the PIC MCU. Since the PIC's power pin (V<sub>DD</sub>) is connected to 5V or 3.3V and the source (V<sub>SS</sub>) to ground (0V), a logic level of '`1`' is equivalent to 5V or 3.3V, and a logic level of '`0`' is 0V.
+The LEDs are connected to the Input/Output (I/O) pins. First, the I/O pin must be configured as output. In this case, when one of these pins is driven high (LED_D2 = 1), the LED will turn on. These two logic levels are derived from the power pins of the PIC MCU. Since the PIC’s power pin (V<sub>DD</sub>) is connected to 5V or 3.3V and the source (V<sub>SS</sub>) to ground (0V), a logic level of '`1`' is equivalent to 5V or 3.3V, and a logic level of '`0`' is 0V.
 
 
 ### <u>Lab 2: Blink</u>
@@ -89,7 +90,7 @@ The four MSbs of the ADC result are reflected onto each of the four LEDs, respec
 The ADC value will be printed on the UART TX pin which is connected to pin RC6 through Peripheral Pin Select (PPS). Connect RC6 to the Virtual COM port using a jumper wire to use the on-board serial-to-USB feature.
 
 #### Summary
-The PIC18-Q10 family of devices have an on-board Analog-to-Digital Converter with Computation (ADCC) with 10 bits of resolution. The converter can be referenced to the device's V<sub>DD</sub> or an external voltage reference. This lab references it to V<sub>DD</sub>. The result from the ADC is represented by a ratio of the voltage to the reference.
+The PIC18-Q10 family of devices have an on-board Analog-to-Digital Converter with Computation (ADCC) with 10 bits of resolution. The converter can be referenced to the device’s V<sub>DD</sub> or an external voltage reference. This lab references it to V<sub>DD</sub>. The result from the ADC is represented by a ratio of the voltage to the reference.
 
 
 ### <u>Lab 5: Variable Speed Rotate</u>
@@ -97,7 +98,7 @@ The PIC18-Q10 family of devices have an on-board Analog-to-Digital Converter wit
 This lab combines all previous ones to produce a variable speed rotating LED display that is proportional to the ADC value. The ADC value and LED rotate speed are inversely proportional to each other.
 
 #### Hardware Effects
-Rotate the on-board potentiometer to change the speed of the LED's shift. <br />
+Rotate the on-board potentiometer to change the speed of the LED’s shift. <br />
 The ADC value will be printed on the UART TX pin which is connected to pin RC6 through PPS. Connect RC6 to the Virtual COM port using a jumper wire to use the on-board serial-to-USB feature.
 
 #### Summary
@@ -132,7 +133,7 @@ This lab configures Timer1 to count instruction cycles and to set a flag when it
 
 ### <u>Lab 8: Interrupts</u>
 #### Introduction
-This lab discusses all about interrupts—their purpose, capabilities and how to set them up. Most interrupts are sourced from MCU peripheral modules. Some I/O pins can also be configured to generate interrupts whenever a change in state is detected. Interrupts usually signal events that require servicing by the software's Interrupt Service Routine (ISR). Once an interrupt occurs, the program counter immediately jumps to the ISR to clear the interrupt flag, and then resumes what it was doing before. It is a more efficient way of handling events than continuously polling a status flag.
+This lab discusses all about interrupts—their purpose, capabilities and how to set them up. Most interrupts are sourced from MCU peripheral modules. Some I/O pins can also be configured to generate interrupts whenever a change in state is detected. Interrupts usually signal events that require servicing by the software’s Interrupt Service Routine (ISR). Once an interrupt occurs, the program counter immediately jumps to the ISR to clear the interrupt flag, and then resumes what it was doing before. It is a more efficient way of handling events than continuously polling a status flag.
 
 #### Hardware Effects
 LEDs D5, D4, D3 and D2 rotate from left to right at a constant rate of 499.712 ms.
@@ -146,7 +147,7 @@ This lab demonstrates the advantage of using interrupts over polling. An interru
 This lab introduces Sleep mode. The `SLEEP()` function is used to put the device into a low-power standby mode.
 
 #### Hardware Effects
-Once this lab is in Running state, the WDT will start counting. While in Sleep mode, LEDs D2/D4 and D3/D5 are turned ON and OFF, respectively. Pressing the switch won't go to the next lab since the PIC is in Sleep mode. After the WDT has reached its period, which is approximately 4s for this lab, the PIC exits Sleep mode and the four LEDs, D2 through D5, are toggled.
+Once this lab is in Running state, the WDT will start counting. While in Sleep mode, LEDs D2/D4 and D3/D5 are turned ON and OFF, respectively. Pressing the switch will not go to the next lab since the PIC is in Sleep mode. After the WDT has reached its period, which is approximately 4s for this lab, the PIC exits Sleep mode and the four LEDs, D2 through D5, are toggled.
 
 #### Summary
 The Power-Down mode is entered by executing the `SLEEP` instruction. Upon entering Sleep mode, there are different conditions that can exist, such as:
